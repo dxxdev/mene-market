@@ -1,5 +1,9 @@
 import { v4 as randomId } from "uuid";
 import {
+  JBLsimsizQuloqchinAlvon1,
+  JBLsimsizQuloqchinAlvon2,
+  JBLsimsizQuloqchinAlvon3,
+  JBLsimsizQuloqchinAlvon4,
   JBLsimsizQuloqchinAmetist1,
   JBLsimsizQuloqchinAmetist2,
   JBLsimsizQuloqchinAmetist3,
@@ -31,9 +35,13 @@ export const products = [
     },
     images: [
       JBLsimsizQuloqchinAmetist1,
+      JBLsimsizQuloqchinAlvon1,
       JBLsimsizQuloqchinAmetist2,
+      JBLsimsizQuloqchinAlvon2,
       JBLsimsizQuloqchinAmetist3,
+      JBLsimsizQuloqchinAlvon3,
       JBLsimsizQuloqchinAmetist4,
+      JBLsimsizQuloqchinAlvon4,
     ],
     colors: [
       {

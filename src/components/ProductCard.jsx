@@ -13,13 +13,16 @@ const ProductCard = ({ product, rendered }) => {
 
   return (
     <li className="flex shadow-md flex-col overflow-hidden gap-y-4 rounded-3xl">
-      <Link className="overflow-hidden" to={`/${product.productName}`}>
+      <Link
+        className="overflow-hidden"
+        to={`/${product.category.categoryName}/${product.productName}`}
+      >
         <Swiper
           autoplay={{ delay: 3000 }}
           modules={[Autoplay]}
           className="mySwiper h-80"
         >
-          {product.images.map((image, index) => {
+          {product.images.slice(0, 4).map((image, index) => {
             return (
               <SwiperSlide
                 key={index}
