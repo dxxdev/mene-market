@@ -1,15 +1,125 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
+import { styles } from "../styles";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Autoplay, Pagination } from "swiper/modules";
+import { iphones, techniques } from "../assets/images";
+import "../styles/swiperStyle.css";
 
 const Home = () => {
-    useEffect(()=>{
-        document.title = "Mene Market"
-    })
+  useEffect(() => {
+    document.title = "Mene Market";
+  });
 
   return (
-    <div>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit repellat ipsam numquam et autem, amet beatae quae fugit quibusdam obcaecati at sunt possimus aut ratione repudiandae esse ipsa accusamus ullam blanditiis pariatur voluptatem maxime odio. Accusantium quas vel, repellat voluptatem incidunt velit quos eligendi hic ratione ad. Hic vel aut recusandae aliquam repellat assumenda ab sit. Earum maiores repudiandae itaque accusantium porro non architecto rerum commodi aut sapiente sunt quos, aperiam nobis modi. Debitis earum non consectetur enim reiciendis voluptates dolorem? Enim odit aperiam necessitatibus nesciunt atque ipsa cupiditate quo voluptate officia nam quae eos amet, magnam illum suscipit ab rem qui. Error sit atque ea ipsam delectus suscipit quasi, dolor saepe eligendi ut incidunt rerum repellat! Eius possimus fugiat ipsam quidem culpa, tempore consequuntur, nihil earum commodi nulla porro architecto repudiandae consectetur dignissimos natus consequatur. Dolorum soluta ea, quis sint eveniet accusamus iure tempore porro quos inventore totam a, pariatur impedit dolore at! Alias totam autem repudiandae iure, aliquid consequatur consectetur, excepturi quos quisquam velit at facere repellat, explicabo nihil libero adipisci deserunt modi voluptatem quas sequi facilis repellendus. Explicabo dolores minus magni? Reiciendis et esse porro suscipit cupiditate repellendus ea dolore, numquam quae ipsa laborum quibusdam assumenda totam magnam dolorem nihil iusto hic, atque, maxime doloremque id unde officiis? Ipsa pariatur atque minus perferendis recusandae vero doloremque ipsam. Molestiae maiores, doloremque, est modi totam inventore soluta omnis, repudiandae earum beatae quasi iure. Tempore laudantium eos minima adipisci facere eum aut molestiae mollitia autem est nesciunt reiciendis fuga provident doloremque in odit ipsa sint dignissimos repudiandae, soluta accusamus. Dignissimos incidunt fugit tempora quia dolores magni ullam ipsa expedita. Veritatis, deleniti. Placeat, neque eligendi? Quisquam error id perferendis quaerat culpa explicabo natus dicta nihil officiis! Enim doloremque vero dolor fuga libero, illum optio repudiandae quisquam minima vel beatae velit soluta, tempore id molestiae, cupiditate delectus aliquid officia pariatur ex nulla dolorum voluptas! Adipisci, impedit. Reiciendis laudantium quod quibusdam exercitationem? Veniam, distinctio rerum dicta totam et error perferendis esse, modi nobis adipisci mollitia, non obcaecati tempore optio numquam possimus culpa repellat voluptatem iste voluptate quis. Quisquam numquam quod eveniet repudiandae nihil ad laudantium soluta enim fugiat amet consequatur, nulla quaerat, at excepturi vero culpa molestiae. Unde quidem molestiae excepturi obcaecati soluta vel odio ullam laudantium officia iure, doloribus ratione corrupti ex mollitia quis, blanditiis enim deserunt aspernatur natus cumque inventore expedita. Facere aperiam molestiae quis doloribus corporis fugiat cupiditate error debitis esse quos odit non similique assumenda dolores, sed quam aliquam dolorem in aspernatur. Libero repellendus provident accusantium inventore cumque voluptatum ipsam cupiditate, sapiente, eius porro dicta possimus esse iusto totam laboriosam autem neque, magni rem? Corrupti, consequatur? Accusamus excepturi mollitia nesciunt facilis deserunt, natus tempora eius repellat quas repudiandae! Hic repellendus nemo cupiditate! Iste asperiores saepe, tempora, dolor illo illum sed necessitatibus odit quae consequuntur quidem rem possimus reprehenderit ab optio. Porro accusantium sunt, reiciendis eligendi molestiae dolor, rerum similique placeat molestias, nulla in corrupti facilis sint harum fugiat labore minima asperiores exercitationem error iusto? Hic tenetur mollitia maxime officia nihil commodi reprehenderit in, corporis laboriosam? Assumenda tempore unde pariatur est ipsam fugiat fuga, eveniet soluta aperiam quis quidem voluptatibus culpa dolores! Repudiandae distinctio a dolorem. Perspiciatis sapiente vel sequi molestias laborum necessitatibus a saepe quisquam, velit quo pariatur, quidem quae nemo mollitia veritatis, aliquam sunt accusamus. Quam repellendus atque dolores debitis in deleniti quaerat velit soluta ratione provident dignissimos a reiciendis illum magnam numquam expedita rem modi eligendi voluptatum aliquam, hic veniam quo harum? Deleniti quis laboriosam architecto dolorem quisquam ullam veniam impedit animi? Voluptas aliquam quidem possimus rem animi optio tenetur itaque officiis debitis et corporis, atque qui necessitatibus ullam quam officia distinctio veniam nisi ipsum quas sequi amet delectus minima. Laudantium inventore dolore ducimus doloribus fuga voluptates deserunt aut necessitatibus quia omnis, est amet commodi exercitationem? Pariatur commodi recusandae quam? Consectetur, possimus repellendus consequatur iusto laborum laboriosam in temporibus dolorem velit ab optio! Eius error animi quasi enim, laboriosam vel officiis soluta, sit esse cum libero ipsum eveniet, natus facilis! Maxime odit itaque mollitia labore reiciendis minima similique, harum ipsam, est atque tempore commodi iusto eaque. Laboriosam laborum et aliquam accusantium totam aut delectus quam. Nostrum a ut quisquam ducimus voluptatem dolorum beatae repellat tempore ullam omnis aspernatur sequi fugit, itaque dolores neque vero! Sapiente eius quaerat odio sint distinctio amet iste alias perferendis suscipit esse. Quae officia dolor recusandae aspernatur sapiente quos dolore numquam, quibusdam dicta id odit quia nemo nihil fuga voluptate doloribus totam beatae magnam necessitatibus ut, possimus fugit. Ipsam cumque quibusdam dolor tempora perspiciatis dignissimos porro, reiciendis omnis in ad voluptas eum nesciunt veniam possimus ex, inventore repudiandae ipsa et provident repellat asperiores? Fuga, quas. Rerum, nesciunt nobis! Vel impedit ipsum temporibus asperiores esse dolore dolor. Perspiciatis eaque officiis, ipsam beatae provident obcaecati at aut maxime tenetur laudantium fuga iusto, dicta autem? Doloremque commodi inventore enim rem provident earum hic cumque voluptatem consequatur et? Porro at iste eaque quisquam excepturi nobis ipsam praesentium commodi quidem ex repudiandae earum magnam, temporibus expedita id quaerat quas exercitationem suscipit ut impedit. Rerum ab voluptate dolore non, pariatur, tenetur molestias animi, esse id similique qui eaque repellendus nisi? Impedit laudantium praesentium in obcaecati minima, porro nostrum blanditiis facere quam laboriosam quia voluptatem culpa quibusdam, delectus maiores velit ipsam tenetur sapiente reprehenderit esse molestias recusandae? Cum cupiditate nulla corrupti labore necessitatibus? Quod officiis, consequuntur quam libero quo dolor rerum. Optio nulla assumenda magni ipsa laboriosam quo neque aut vero, modi aspernatur et autem nam quisquam tempora nihil provident est exercitationem nesciunt alias asperiores nisi consequatur rerum. Autem officia et rem soluta quibusdam veniam ipsa cupiditate, provident rerum dolores officiis. Recusandae necessitatibus dignissimos deserunt nobis iure voluptatibus totam exercitationem itaque unde id voluptates et dolorem odit, illum eveniet aliquam ullam modi eaque? Reprehenderit sit optio cupiditate vitae, suscipit nemo deserunt rem odio possimus vero rerum. Sint labore quibusdam repellendus nihil tenetur iusto maiores aliquam quod possimus reiciendis eaque nobis tempore libero, praesentium quia earum sed quas magni ab minima soluta fuga explicabo? Eligendi, debitis eaque. Tempora voluptatem neque saepe?
+    <div className={`${styles.container}`}>
+      <div className="pt-12 pb-6">
+        <Swiper
+          pagination={true}
+          loop={true}
+          modules={[Autoplay, Pagination]}
+          autoplay={{
+            delay: 5000,
+          }}
+          className="mySwiper bg-earth-green swiper-pagination-style"
+        >
+          <SwiperSlide className="flex px-3 md:px-6 py-6 flex-col-reverse gap-y-10 md:justify-between md:flex-row items-center">
+            <div className="flex flex-col items-center gap-y-6">
+              <div className="flex flex-col gap-y-2 w-full max-w-md">
+                <h2 className="text-center text-3xl font-bold text-white">
+                  Bayram oldi aksiyamizda ishtirok eting
+                </h2>
+                <p className="text-center text-lg text-white font-medium leading-5">
+                  90% gacha chegirma
+                </p>
+              </div>
+              <button className="bg-jet-black transition-all active:bg-jet-black/80 hover:bg-jet-black/90 hover:gap-4 hover:px-5 rounded-full py-3 px-6 flex gap-2 items-center border border-jet-black">
+                <p className="text-white  text-lg leading-5 font-medium">
+                  Harid qilish
+                </p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14.93 5.92999L21 12L14.93 18.07"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M4 12H20.83"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="w-full md:max-w-xs lg:max-w-md">
+              <img src={techniques} className="w-full" alt="Banner" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="flex px-3 md:px-6 py-6 flex-col-reverse gap-y-10 md:justify-between md:flex-row items-center">
+            <div className="flex flex-col items-center gap-y-6">
+              <div className="flex flex-col gap-y-2 w-full max-w-md">
+                <h2 className="text-center text-3xl font-bold text-white">
+                  Bayram oldi aksiyamizda ishtirok eting
+                </h2>
+                <p className="text-center text-lg text-white font-medium leading-5">
+                  90% gacha chegirma
+                </p>
+              </div>
+              <button className="bg-jet-black transition-all active:bg-jet-black/80 hover:bg-jet-black/90 hover:gap-4 hover:px-5 rounded-full py-3 px-6 flex gap-2 items-center border border-jet-black">
+                <p className="text-white  text-lg leading-5 font-medium">
+                  Harid qilish
+                </p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14.93 5.92999L21 12L14.93 18.07"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M4 12H20.83"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="w-full md:max-w-xs lg:max-w-md">
+              <img src={iphones} className="w-full" alt="Banner" />
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

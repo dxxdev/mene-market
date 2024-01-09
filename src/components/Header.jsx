@@ -5,7 +5,7 @@ import { logoHeader } from "../assets/images";
 
 const Header = () => {
   const searchInput = useRef(null);
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <header className="backdrop-blur-sm bg-white/90 sticky top-0 w-full z-[999]">
       <div className="w-full relative">
@@ -126,7 +126,7 @@ const Header = () => {
                   defaultValue={"uz"}
                   className="outline-none bg-transparent h-full flex items-center justify-center cursor-pointer"
                 >
-                  <option value="uz" selected>
+                  <option value="uz">
                     UZ
                   </option>
                   <option value="ru">RU</option>
