@@ -5,5 +5,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-  font-family: "Inter", sans-serif; 
+  font-family: "Inter", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  height: 3px;
+}
+
+.gradient-btn {
+  background: linear-gradient(105deg, #08c8f9 0%, #1a3edd 100%);
+  @apply flex items-center gap-2 px-2.5 py-2 rounded-full;
 }
