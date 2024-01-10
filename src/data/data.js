@@ -24,8 +24,7 @@ export const products = [
       categoryImage: electronics,
       categoryColors: ["blue-100", "blue-300"],
     },
-    theRest: 314,
-    price: 20,
+    price: 100, // dollars are determined
     discount: 0.2,
     discountPrice: function () {
       return this.price - this.price * this.discount;
@@ -45,42 +44,47 @@ export const products = [
     ],
     colors: [
       {
-        colorName: "Alvon",
-        active: true,
-      },
-      {
         colorName: "Ametist",
-        active: false,
+        active: true,
+        image: 0,
+        theRest: 12,
       },
       {
-        colorName: "Oq",
+        colorName: "Alvon",
         active: false,
+        image: 1,
+        theRest: 5,
       },
-      {
-        colorName: "Qizil",
-        active: false,
-      },
-      {
-        colorName: "Havorang",
-        active: false,
-      },
-      {
-        colorName: "Och yashil",
-        active: false,
-      },
-      {
-        colorName: "Metall kulrang",
-        active: false,
-      },
-      {
-        colorName: "Binafsha",
-        active: false,
-      },
-      {
-        colorName: "Qora",
-        active: false,
-      },
+      // {
+      //   colorName: "Oq",
+      //   active: false,
+      // },
+      // {
+      //   colorName: "Qizil",
+      //   active: false,
+      // },
+      // {
+      //   colorName: "Havorang",
+      //   active: false,
+      // },
+      // {
+      //   colorName: "Och yashil",
+      //   active: false,
+      // },
+      // {
+      //   colorName: "Metall kulrang",
+      //   active: false,
+      // },
+      // {
+      //   colorName: "Binafsha",
+      //   active: false,
+      // },
+      // {
+      //   colorName: "Qora",
+      //   active: false,
+      // },
     ],
+    countProduct: 1,
     reservations: 1000,
     rating: 4.6,
     saved: false,

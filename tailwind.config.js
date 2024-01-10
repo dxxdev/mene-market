@@ -10,6 +10,8 @@ module.exports = withMT({
       "dark-gray": "#949494",
       "red-velvet": "#FE3A30",
       "off-red": "#FCECEF",
+      "deepsky-blue": "#08C8F9",
+      "off-blue": "#EFF5FB",
     },
   },
   plugins: [],

@@ -1,30 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { styles } from "../styles";
 import { useParams } from "react-router-dom";
-import { products } from "../data/data";
+import { products, savedProduct } from "../data/data";
 import ViewImages from "../components/ViewImages";
+import RatingBar from "../components/RatingBar";
 
 const Detail = () => {
   const { productName } = useParams();
-  const verticalImageList = useRef(null);
   const [openViewImage, setOpenViewImage] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
+  const [activeColor, setActiveColor] = useState(0);
   const info = products.find((product) => product.productName == productName);
+  const [render, setRender] = useState();
   console.log(info);
-
-  useEffect(() => {
-    if (verticalImageList.current && activeImage > 0) {
-      verticalImageList.current.scrollTop += 137;
-    }
-  }, [activeImage]);
   return (
     <div className={`${styles.container}`}>
       <div className="pt-12 pb-6 flex flex-col md:flex-row gap-6">
         <div className="flex gap-2.5">
-          <ul
-            ref={verticalImageList}
-            className="w-24 overflow-auto h-[600px] scroll-none space-y-2.5"
-          >
+          <ul className="w-24 overflow-auto h-[600px] scroll-none space-y-2.5">
             {info.images.map((image, index) => {
               return (
                 <li
@@ -102,6 +95,226 @@ const Detail = () => {
               className="h-full"
               alt=""
             />
+          </div>
+        </div>
+        <div className="flex w-full flex-col">
+          <div className="w-full flex justify-between pb-2 items-center">
+            <p className="text-sm leading-[112%] font-normal text-jet-black">
+              {info.reservations} ta buyurtma
+            </p>
+            <RatingBar product={info} />
+            <button
+              onClick={() => {
+                savedProduct(info);
+                setRender((prev) => !prev);
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="21"
+                viewBox="0 0 22 21"
+                fill={`${info.saved ? "#FE3A30" : "none"}`}
+                className="transition-all duration-100 active:scale-75 active:rotate-6"
+              >
+                <path
+                  d="M11.62 19.2998C11.28 19.4198 10.72 19.4198 10.38 19.2998C7.48 18.3098 1 14.1798 1 7.17984C1 4.08984 3.49 1.58984 6.56 1.58984C8.38 1.58984 9.99 2.46984 11 3.82984C12.01 2.46984 13.63 1.58984 15.44 1.58984C18.51 1.58984 21 4.08984 21 7.17984C21 14.1798 14.52 18.3098 11.62 19.2998Z"
+                  stroke="#FE3A30"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <h2 className="pb-6 text-3xl font-semibold leading-[112%]">
+            {info.productName}
+          </h2>
+          <div className="flex flex-col pb-6 gap-2">
+            <p>Rangini tanlang:</p>
+            <div className="flex items-center gap-2.5">
+              {info.colors.map((color, index) => {
+                return (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      setActiveColor(index);
+                      setActiveImage(color.image);
+                      setRender((prev) => !prev);
+                    }}
+                    className={`w-16 cursor-pointer p-0.5 rounded-lg ${
+                      activeColor == index ? "bg-gray-800" : "bg-transparent"
+                    }`}
+                  >
+                    <img
+                      src={info.images[color.image]}
+                      className="rounded-lg"
+                      alt=""
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="flex flex-col pb-6 gap-2">
+            <p>Miqdori:</p>
+            <div className="flex items-center gap-2.5">
+              <div className="flex border border-jet-black justify-between rounded-full p-1.5 gap-4 items-center">
+                <button
+                  disabled={info.countProduct == 1 ? true : false}
+                  className={`${
+                    info.countProduct == 1 ? "opacity-60" : "opacity-100"
+                  }`}
+                  onClick={() => {
+                    setRender((prev) => !prev);
+                    if (info.countProduct > 1) {
+                      info.countProduct--;
+                    } else {
+                      info.countProduct = 1;
+                    }
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.36719 10H14.0339"
+                      stroke="#13181F"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M8.20052 18.3333H13.2005C17.3672 18.3333 19.0339 16.6667 19.0339 12.5V7.50001C19.0339 3.33334 17.3672 1.66667 13.2005 1.66667H8.20052C4.03385 1.66667 2.36719 3.33334 2.36719 7.50001V12.5C2.36719 16.6667 4.03385 18.3333 8.20052 18.3333Z"
+                      stroke="#13181F"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <p>{info.countProduct}</p>
+                <button
+                  disabled={
+                    info.countProduct == info.colors[activeColor].theRest
+                      ? true
+                      : false
+                  }
+                  className={`${
+                    info.countProduct == info.colors[activeColor].theRest
+                      ? "opacity-60"
+                      : "opacity-100"
+                  }`}
+                  onClick={() => {
+                    setRender((prev) => !prev);
+                    if (
+                      info.countProduct > 0 &&
+                      info.colors[activeColor].theRest > info.countProduct
+                    ) {
+                      info.countProduct++;
+                    } else {
+                      info.countProduct = info.colors[activeColor].theRest;
+                    }
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.36719 10H14.0339"
+                      stroke="#13181F"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M10.7007 13.3333V6.66667"
+                      stroke="#13181F"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M8.20052 18.3333H13.2005C17.3672 18.3333 19.0339 16.6667 19.0339 12.5V7.50001C19.0339 3.33334 17.3672 1.66667 13.2005 1.66667H8.20052C4.03385 1.66667 2.36719 3.33334 2.36719 7.50001V12.5C2.36719 16.6667 4.03385 18.3333 8.20052 18.3333Z"
+                      stroke="#13181F"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              {info.colors[activeColor].theRest > 0 && (
+                <p
+                  className={`text-sm leading-none ${
+                    info.colors[activeColor].theRest > 100
+                      ? "text-earth-green"
+                      : "text-red-velvet"
+                  }`}
+                >
+                  Sotuvda {info.colors[activeColor].theRest}ta bor
+                </p>
+              )}
+              {info.colors[activeColor].theRest == 0 && (
+                <p className="text-sm">Sotuvda qolmadi</p>
+              )}
+            </div>
+          </div>
+          <div className="flex flex-col pb-6 gap-2">
+            <p>Narxi:</p>
+            <div className="flex gap-2.5 items-center">
+              <p className="text-xl leading-[112%] font-semibold text-jet-black">
+                ${info.discountPrice() * info.countProduct}
+              </p>
+              <p className="text-xl leading-[112%] font-semibold text-dark-gray">
+                <del>${info.price * info.countProduct}</del>
+              </p>
+              <span className="px-[14px] py-1.5 rounded-full text-sm leading-[112%] font-normal bg-off-red text-red-velvet">
+                -${info.howMuchDiscount()}%
+              </span>
+            </div>
+          </div>
+          <div className="w-full p-4 rounded-lg border-[0.5px] border-deepsky-blue gap-2 flex items-start bg-off-blue">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="16"
+                viewBox="0 0 17 16"
+                fill="none"
+              >
+                <path
+                  d="M8.70085 1.33333C5.02751 1.33333 2.03418 4.32667 2.03418 8C2.03418 11.6733 5.02751 14.6667 8.70085 14.6667C12.3742 14.6667 15.3675 11.6733 15.3675 8C15.3675 4.32667 12.3742 1.33333 8.70085 1.33333ZM8.20085 5.33333C8.20085 5.06 8.42751 4.83333 8.70085 4.83333C8.97418 4.83333 9.20085 5.06 9.20085 5.33333V8.66667C9.20085 8.94 8.97418 9.16667 8.70085 9.16667C8.42751 9.16667 8.20085 8.94 8.20085 8.66667V5.33333ZM9.31418 10.92C9.28085 11.0067 9.23418 11.0733 9.17418 11.14C9.10751 11.2 9.03418 11.2467 8.95418 11.28C8.87418 11.3133 8.78751 11.3333 8.70085 11.3333C8.61418 11.3333 8.52751 11.3133 8.44751 11.28C8.36751 11.2467 8.29418 11.2 8.22751 11.14C8.16751 11.0733 8.12085 11.0067 8.08751 10.92C8.05418 10.84 8.03418 10.7533 8.03418 10.6667C8.03418 10.58 8.05418 10.4933 8.08751 10.4133C8.12085 10.3333 8.16751 10.26 8.22751 10.1933C8.29418 10.1333 8.36751 10.0867 8.44751 10.0533C8.60751 9.98667 8.79418 9.98667 8.95418 10.0533C9.03418 10.0867 9.10751 10.1333 9.17418 10.1933C9.23418 10.26 9.28085 10.3333 9.31418 10.4133C9.34751 10.4933 9.36751 10.58 9.36751 10.6667C9.36751 10.7533 9.34751 10.84 9.31418 10.92Z"
+                  fill="url(#paint0_linear_478_5204)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_478_5204"
+                    x1="2.03418"
+                    y1="1.33333"
+                    x2="17.7847"
+                    y2="5.47547"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#08C8F9" />
+                    <stop offset="1" stopColor="#1A3EDD" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+            <p className="text-[15px] leading-[112%] font-normal text-jet-black">
+              Yetqazib berish summasi manzilingizga ko'ra 2 dollardan
+              boshlanadi. Yoki 2 ta mahsulot xarid qiling va yetqazib berish
+              bepul. (bonusli mahsulotlar bundan istisno)
+            </p>
           </div>
         </div>
       </div>
