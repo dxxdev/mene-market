@@ -4,6 +4,16 @@ import { useParams } from "react-router-dom";
 import { products, savedProduct } from "../data/data";
 import ViewImages from "../components/ViewImages";
 import RatingBar from "../components/RatingBar";
+import {
+  Option,
+  Select,
+  Tab,
+  TabPanel,
+  Tabs,
+  TabsBody,
+  TabsHeader,
+} from "@material-tailwind/react";
+import { points } from "../data/points";
 
 const Detail = () => {
   const { productName } = useParams();
@@ -12,13 +22,16 @@ const Detail = () => {
   const [activeColor, setActiveColor] = useState(0);
   const info = products.find((product) => product.productName == productName);
   const [render, setRender] = useState();
-  console.log(info);
+  const [clientName, setClientName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [activeTab, setActiveTab] = useState("description");
+  // console.log(points);
   return (
     <div className={`${styles.container}`}>
-      <div className="pt-12 pb-6 flex flex-col md:flex-row gap-6">
-        <div className="flex gap-2.5">
-          <ul className="w-24 overflow-auto h-[600px] scroll-none space-y-2.5">
-            {info.images.map((image, index) => {
+      <div className="pt-12 pb-6 flex flex-col md:flex-row gap-6 lg:gap-12">
+        <div className="flex w-full gap-2.5">
+          <ul className="w-12 hidden md:block lg:w-24 overflow-auto h-[450px] lg:h-[600px] scroll-none space-y-2.5">
+            {info.images.slice(0, 4).map((image, index) => {
               return (
                 <li
                   onClick={() => {
@@ -36,7 +49,7 @@ const Detail = () => {
               );
             })}
           </ul>
-          <div className="h-full relative max-h-[600px]">
+          <div className="h-full overflow-hidden flex justify-center items-center relative max-h-[400px] lg:max-h-[600px]">
             <div className="absolute top-1/2 left-0 w-full flex justify-between items-center -translate-y-1/2 px-2">
               <button
                 className="opacity-75"
@@ -92,7 +105,7 @@ const Detail = () => {
             <img
               onClick={() => setOpenViewImage(true)}
               src={info.images[activeImage]}
-              className="h-full"
+              className="h-full cursor-pointer"
               alt=""
             />
           </div>
@@ -115,7 +128,7 @@ const Detail = () => {
                 height="21"
                 viewBox="0 0 22 21"
                 fill={`${info.saved ? "#FE3A30" : "none"}`}
-                className="transition-all duration-100 active:scale-75 active:rotate-6"
+                className="transition-all duration-750 active:scale-75"
               >
                 <path
                   d="M11.62 19.2998C11.28 19.4198 10.72 19.4198 10.38 19.2998C7.48 18.3098 1 14.1798 1 7.17984C1 4.08984 3.49 1.58984 6.56 1.58984C8.38 1.58984 9.99 2.46984 11 3.82984C12.01 2.46984 13.63 1.58984 15.44 1.58984C18.51 1.58984 21 4.08984 21 7.17984C21 14.1798 14.52 18.3098 11.62 19.2998Z"
@@ -159,7 +172,7 @@ const Detail = () => {
           <div className="flex flex-col pb-6 gap-2">
             <p>Miqdori:</p>
             <div className="flex items-center gap-2.5">
-              <div className="flex border border-jet-black justify-between rounded-full p-1.5 gap-4 items-center">
+              <div className="flex border border-jet-black justify-between rounded-full p-1.5 gap-3 items-center">
                 <button
                   disabled={info.countProduct == 1 ? true : false}
                   className={`${
@@ -254,11 +267,7 @@ const Detail = () => {
               </div>
               {info.colors[activeColor].theRest > 0 && (
                 <p
-                  className={`text-sm leading-none ${
-                    info.colors[activeColor].theRest > 100
-                      ? "text-earth-green"
-                      : "text-red-velvet"
-                  }`}
+                  className={`text-base leading-none gap-2 flex w-full justify-start items-center text-earth-green`}
                 >
                   Sotuvda {info.colors[activeColor].theRest}ta bor
                 </p>
@@ -316,7 +325,170 @@ const Detail = () => {
               bepul. (bonusli mahsulotlar bundan istisno)
             </p>
           </div>
+          <div className="flex pt-6 flex-col pb-6 gap-6">
+            <h6 className="text-lg leading-[112%] text-jet-black font-semibold">
+              Buyurtma rasmiylashtirish
+            </h6>
+            <div className="flex flex-col gap-y-3 w-full items-start">
+              <div className="relative w-full">
+                <input
+                  type="text"
+                  value={clientName}
+                  onChange={(e) => setClientName(e.target.value)}
+                  id="client_name"
+                  className={`block text-base font-normal px-5 py-2 w-full leading-[164%] text-jet-black bg-transparent rounded-full appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border ${
+                    clientName !== ""
+                      ? "border-deepsky-blue"
+                      : "focus:border-blue-600"
+                  }`}
+                  placeholder=""
+                />
+                <label
+                  htmlFor="client_name"
+                  className={`absolute transition-all duration-300 ${
+                    clientName !== ""
+                      ? "left-2 top-0 text-deepsky-blue peer-focus:text-deepsky-blue scale-75 px-2"
+                      : "left-4 cursor-text peer-focus:cursor-default top-1/2 text-dark-gray scale-100 px-0 peer-focus:-translate-y-1/2 peer-focus:top-0 peer-focus:scale-75 peer-focus:px-2 peer-focus:left-2 peer-focus:text-deepsky-blue"
+                  } -translate-y-1/2 bg-white`}
+                >
+                  Ismingiz
+                </label>
+              </div>
+              <div className="relative w-full">
+                <input
+                  type="number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  id="phone_number"
+                  className={`block text-base font-normal px-5 py-2 w-full leading-[164%] text-jet-black bg-transparent rounded-full appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer border ${
+                    phoneNumber !== ""
+                      ? "border-deepsky-blue"
+                      : "focus:border-blue-600"
+                  }`}
+                  placeholder=""
+                />
+                <label
+                  htmlFor="phone_number"
+                  className={`absolute transition-all duration-300 ${
+                    phoneNumber !== ""
+                      ? "-left-1 top-0 text-deepsky-blue peer-focus:text-deepsky-blue scale-75 px-2"
+                      : "left-4 cursor-text peer-focus:cursor-default top-1/2 text-dark-gray scale-100 px-0 peer-focus:-translate-y-1/2 peer-focus:top-0 peer-focus:scale-75 peer-focus:px-2 peer-focus:-left-1 peer-focus:text-deepsky-blue"
+                  } -translate-y-1/2 bg-white`}
+                >
+                  Telefon raqamingiz
+                </label>
+              </div>
+              <div className="relative w-full">
+                <Select
+                  label="Select Version"
+                  color="blue"
+                  labelProps={{
+                    className: "left-4 z-10 before:hidden",
+                  }}
+                  className="rounded-full"
+                >
+                  {points.map((point, index) => {
+                    return (
+                      <Option key={index} value={point}>
+                        {point}
+                      </Option>
+                    );
+                  })}
+                </Select>
+              </div>
+              <button className="gradient-btn !px-4 hover:opacity-90">
+                <span className="text-base leading-[164%] font-normal text-white">
+                  Xarid qilish
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                >
+                  <path
+                    d="M6.36719 9.5C6.36719 10.78 7.42052 11.8333 8.70052 11.8333C9.98052 11.8333 11.0339 10.78 11.0339 9.5"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M6.57398 1.33333L4.16064 3.75333"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M10.8271 1.33333L13.2405 3.75333"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M2.03418 5.23333C2.03418 3.99999 2.69418 3.89999 3.51418 3.89999H13.8875C14.7075 3.89999 15.3675 3.99999 15.3675 5.23333C15.3675 6.66666 14.7075 6.56666 13.8875 6.56666H3.51418C2.69418 6.56666 2.03418 6.66666 2.03418 5.23333Z"
+                    stroke="white"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M3.03418 6.66667L3.97418 12.4267C4.18751 13.72 4.70085 14.6667 6.60751 14.6667H10.6275C12.7008 14.6667 13.0075 13.76 13.2475 12.5067L14.3675 6.66667"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
+      <div className="pt-6 pb-32 flex flex-col items-start">
+        <Tabs value={activeTab} className="w-full">
+          <TabsHeader
+            className="rounded-none border-b-2 border-b-transparent w-max flex gap-6 bg-transparent p-0"
+            indicatorProps={{
+              className:
+                "bg-transparent border-b-2 border-deepsky-blue shadow-none rounded-none",
+            }}
+          >
+            <Tab
+              value="description"
+              className="w-max p-0 text-lg leading-[112%] font-medium text-jet-black pb-1"
+              onClick={() => setActiveTab("description")}
+            >
+              Mahsulot tavsifi
+            </Tab>
+            <Tab
+              value="commentaries"
+              className="w-max p-0 text-lg leading-[112%] font-medium text-jet-black pb-1"
+              onClick={() => setActiveTab("commentaries")}
+            >
+              Sharhlar
+            </Tab>
+          </TabsHeader>
+          <TabsBody className="p-0">
+            <TabPanel
+              value="description"
+              className="p-0 py-6 text-base leading-[164%] text-jet-black font-normal"
+            >
+              {info.description.map((descript, index) => {
+                return <p key={index}>{descript}</p>;
+              })}
+            </TabPanel>
+            <TabPanel
+              value="commentaries"
+              className="p-0 py-6 text-base leading-[164%] text-jet-black font-normal"
+            >
+              commentaries
+            </TabPanel>
+          </TabsBody>
+        </Tabs>
       </div>
       {openViewImage && (
         <ViewImages

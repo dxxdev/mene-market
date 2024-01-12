@@ -49,7 +49,7 @@ const ProductCard = ({ product, rendered }) => {
         </div>
         <div className="flex items-center gap-2.5">
           <p className="text-xl leading-[112%] font-semibold text-jet-black">
-          ${product.discountPrice()}
+            ${product.discountPrice()}
           </p>
           <p className="text-xl leading-[112%] font-semibold text-dark-gray">
             <del>${product.price}</del>
@@ -59,49 +59,118 @@ const ProductCard = ({ product, rendered }) => {
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <button className="gradient-btn hover:opacity-90">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="21"
-              viewBox="0 0 20 21"
-              fill="none"
+          <button
+            onClick={() => {
+              rendered((prev) => !prev);
+              product.purchased = !product.purchased;
+            }}
+            className={`gradient-btn relative hover:opacity-90 ${
+              product.purchased ? "clicked" : ""
+            }`}
+          >
+            <span className="absolute top-1/2 -left-[10%] -translate-x-1/2 cart-icon -translate-y-1/2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+              >
+                <path
+                  d="M1.6665 2.15649H3.11651C4.01651 2.15649 4.72484 2.93149 4.64984 3.82316L3.95817 12.1232C3.8415 13.4815 4.9165 14.6482 6.28317 14.6482H15.1582C16.3582 14.6482 17.4082 13.6648 17.4998 12.4732L17.9498 6.22316C18.0498 4.83983 16.9998 3.71482 15.6082 3.71482H4.84984"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M13.5417 18.8231C14.117 18.8231 14.5833 18.3567 14.5833 17.7814C14.5833 17.2061 14.117 16.7397 13.5417 16.7397C12.9664 16.7397 12.5 17.2061 12.5 17.7814C12.5 18.3567 12.9664 18.8231 13.5417 18.8231Z"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M6.87516 18.8231C7.45046 18.8231 7.91683 18.3567 7.91683 17.7814C7.91683 17.2061 7.45046 16.7397 6.87516 16.7397C6.29987 16.7397 5.8335 17.2061 5.8335 17.7814C5.8335 18.3567 6.29987 18.8231 6.87516 18.8231Z"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M7.5 7.15649H17.5"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            <span className="absolute box-icon top-[-15%] left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M3.92969 15.8792L15.8797 3.9292"
+                  stroke="#fff"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M11.1013 18.279L12.3013 17.079"
+                  stroke="#fff"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M13.793 15.5887L16.183 13.1987"
+                  stroke="#fff"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M3.60127 10.239L10.2413 3.599C12.3613 1.479 13.4213 1.469 15.5213 3.569L20.4313 8.479C22.5313 10.579 22.5213 11.639 20.4013 13.759L13.7613 20.399C11.6413 22.519 10.5813 22.529 8.48127 20.429L3.57127 15.519C1.47127 13.419 1.47127 12.369 3.60127 10.239Z"
+                  stroke="#fff"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2 21.9985H22"
+                  stroke="#fff"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            <span
+              className={`text-base leading-[164%] font-normal ${
+                product.purchased ? "text-transparent hidden" : "text-white"
+              }`}
             >
-              <path
-                d="M1.6665 2.15649H3.11651C4.01651 2.15649 4.72484 2.93149 4.64984 3.82316L3.95817 12.1232C3.8415 13.4815 4.9165 14.6482 6.28317 14.6482H15.1582C16.3582 14.6482 17.4082 13.6648 17.4998 12.4732L17.9498 6.22316C18.0498 4.83983 16.9998 3.71482 15.6082 3.71482H4.84984"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M13.5417 18.8231C14.117 18.8231 14.5833 18.3567 14.5833 17.7814C14.5833 17.2061 14.117 16.7397 13.5417 16.7397C12.9664 16.7397 12.5 17.2061 12.5 17.7814C12.5 18.3567 12.9664 18.8231 13.5417 18.8231Z"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M6.87516 18.8231C7.45046 18.8231 7.91683 18.3567 7.91683 17.7814C7.91683 17.2061 7.45046 16.7397 6.87516 16.7397C6.29987 16.7397 5.8335 17.2061 5.8335 17.7814C5.8335 18.3567 6.29987 18.8231 6.87516 18.8231Z"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M7.5 7.15649H17.5"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="text-base leading-[164%] font-normal text-white">
               Xarid qilish
+            </span>
+            <span
+              className={`text-base leading-[164%] font-normal ${
+                product.purchased ? "block text-animation" : "hidden"
+              }`}
+            >
+              Sotib olingan
             </span>
           </button>
           <button
@@ -116,7 +185,7 @@ const ProductCard = ({ product, rendered }) => {
               height="21"
               viewBox="0 0 22 21"
               fill={`${product.saved ? "#FE3A30" : "none"}`}
-              className="transition-all duration-100 active:scale-75 active:rotate-6"
+              className="transition-all duration-750 active:scale-75"
             >
               <path
                 d="M11.62 19.2998C11.28 19.4198 10.72 19.4198 10.38 19.2998C7.48 18.3098 1 14.1798 1 7.17984C1 4.08984 3.49 1.58984 6.56 1.58984C8.38 1.58984 9.99 2.46984 11 3.82984C12.01 2.46984 13.63 1.58984 15.44 1.58984C18.51 1.58984 21 4.08984 21 7.17984C21 14.1798 14.52 18.3098 11.62 19.2998Z"
