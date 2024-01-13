@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styles } from "../styles";
 import { useParams } from "react-router-dom";
 import { products, savedProduct } from "../data/data";
@@ -26,6 +26,11 @@ const Detail = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [activeTab, setActiveTab] = useState("description");
   // console.log(points);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
   return (
     <div className={`${styles.container}`}>
       <div className="pt-12 pb-6 flex flex-col md:flex-row gap-6 lg:gap-12">
@@ -72,7 +77,7 @@ const Detail = () => {
                 >
                   <path
                     d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM13.79 15C14.08 15.29 14.08 15.77 13.79 16.06C13.64 16.21 13.45 16.28 13.26 16.28C13.07 16.28 12.88 16.21 12.73 16.06L9.2 12.53C8.91 12.24 8.91 11.76 9.2 11.47L12.73 7.94C13.02 7.65 13.5 7.65 13.79 7.94C14.08 8.23 14.08 8.71 13.79 9L10.79 12L13.79 15Z"
-                    fill="#292D32"
+                    fill="#949494"
                   />
                 </svg>
               </button>
@@ -97,7 +102,7 @@ const Detail = () => {
                 >
                   <path
                     d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM14.79 12.53L11.26 16.06C11.11 16.21 10.92 16.28 10.73 16.28C10.54 16.28 10.35 16.21 10.2 16.06C9.91 15.77 9.91 15.29 10.2 15L13.2 12L10.2 9C9.91 8.71 9.91 8.23 10.2 7.94C10.49 7.65 10.97 7.65 11.26 7.94L14.79 11.47C15.09 11.76 15.09 12.24 14.79 12.53Z"
-                    fill="#292D32"
+                    fill="#949494"
                   />
                 </svg>
               </button>
@@ -329,7 +334,7 @@ const Detail = () => {
             <h6 className="text-lg leading-[112%] text-jet-black font-semibold">
               Buyurtma rasmiylashtirish
             </h6>
-            <div className="flex flex-col gap-y-3 w-full items-start">
+            <div className="flex flex-col gap-y-3 w-full istre md:items-start">
               <div className="relative w-full">
                 <input
                   type="text"
@@ -380,10 +385,11 @@ const Detail = () => {
               </div>
               <div className="relative w-full">
                 <Select
-                  label="Select Version"
+                  label="Yashash manzilingiz"
                   color="blue"
                   labelProps={{
-                    className: "left-4 z-10 before:hidden",
+                    className:
+                      "left-4 z-10 w-[calc(100%-30px)] after:border-t-2 after:border-r-0 after:h-0.5 before:hidden bg-transparent",
                   }}
                   className="rounded-full"
                 >
@@ -396,7 +402,7 @@ const Detail = () => {
                   })}
                 </Select>
               </div>
-              <button className="gradient-btn !px-4 hover:opacity-90">
+              <button className="gradient-btn flex justify-center items-center !px-4 hover:opacity-90">
                 <span className="text-base leading-[164%] font-normal text-white">
                   Xarid qilish
                 </span>

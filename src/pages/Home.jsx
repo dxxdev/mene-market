@@ -39,7 +39,7 @@ const Home = () => {
                 <h2 className="text-center text-3xl font-bold text-white">
                   Bayram oldi aksiyamizda ishtirok eting
                 </h2>
-                <p className="text-center text-lg text-white font-medium leading-5">
+                <p className="text-left md:text-center text-lg text-white font-medium leading-5">
                   90% gacha chegirma
                 </p>
               </div>
@@ -83,7 +83,7 @@ const Home = () => {
                 <h2 className="text-center text-3xl font-bold text-white">
                   Bayram oldi aksiyamizda ishtirok eting
                 </h2>
-                <p className="text-center text-lg text-white font-medium leading-5">
+                <p className="text-left md:text-center text-lg text-white font-medium leading-5">
                   90% gacha chegirma
                 </p>
               </div>
@@ -140,7 +140,7 @@ const Home = () => {
                       className={`w-24 group-hover:bg-${category.color[1]}/50 transition-all duration-300 aspect-square rounded-full flex justify-center items-center bg-${category.color[1]}`}
                     >
                       <img
-                        className="transition-all duration-300 group-hover:scale-110"
+                        className="transition-all drop-shadow-2xl duration-300 group-hover:scale-110"
                         src={category.image}
                         alt=""
                       />
@@ -157,7 +157,7 @@ const Home = () => {
       </div>
       <div className="pt-16">
         <h3 className="text-3xl font-bold">Yangi kelgan mahsulotlar</h3>
-        <ul className="pt-6 pb-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <ul className="pt-6 pb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product) => {
             return (
               <ProductCard

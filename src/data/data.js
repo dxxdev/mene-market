@@ -69,7 +69,6 @@ export const products = [
       //   active: false,
       // },
     ],
-    purchased: false,
     countProduct: 1,
     reservations: 1000,
     rating: 4.6,
