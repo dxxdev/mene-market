@@ -13,13 +13,13 @@ import "../styles/swiperStyle.css";
 import { Link } from "react-router-dom";
 import { categoryProduct, products } from "../data/data";
 import ProductCard from "../components/ProductCard";
+import { arrowRight } from "../assets/icons";
 
 const Home = () => {
   const [render, setRender] = useState(false);
   useEffect(() => {
     document.title = "Mene Market";
   }, []);
-  console.log(categoryProduct);
 
   return (
     <div className={`${styles.container}`}>
@@ -47,30 +47,7 @@ const Home = () => {
                 <p className="text-white  text-lg leading-5 font-medium">
                   Harid qilish
                 </p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="25"
-                  height="24"
-                  viewBox="0 0 25 24"
-                  fill="none"
-                >
-                  <path
-                    d="M14.93 5.92999L21 12L14.93 18.07"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M4 12H20.83"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <img src={arrowRight} alt="" />
               </button>
             </div>
             <div className="w-full md:max-w-xs lg:max-w-md">
@@ -91,30 +68,7 @@ const Home = () => {
                 <p className="text-white  text-lg leading-5 font-medium">
                   Harid qilish
                 </p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="25"
-                  height="24"
-                  viewBox="0 0 25 24"
-                  fill="none"
-                >
-                  <path
-                    d="M14.93 5.92999L21 12L14.93 18.07"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M4 12H20.83"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <img src={arrowRight} alt="" />
               </button>
             </div>
             <div className="w-full md:max-w-xs lg:max-w-md">
@@ -125,10 +79,43 @@ const Home = () => {
       </div>
       <div className="pt-16">
         <h3 className="text-3xl font-bold">Kategoriyalar</h3>
-        <ul className="flex pt-6 pb-6 overflow-auto gap-[30px] horizontal-scroll">
+        <Swiper
+          slidesPerView={2}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+            },
+            480: {
+              slidesPerView: 3,
+            },
+            540: {
+              slidesPerView: 4,
+            },
+            720: {
+              slidesPerView: 5,
+            },
+            880: {
+              slidesPerView: 6,
+            },
+            1024: {
+              slidesPerView: 7,
+            },
+            1200: {
+              slidesPerView: 8,
+            },
+          }}
+          modules={[Pagination]}
+          className="mySwiper py-6 swiper-pagination-style"
+        >
           {categoryProduct.map((category) => {
             return (
-              <li key={category.id} className="group">
+              <SwiperSlide
+                key={category.id}
+                className="group flex justify-center items-center"
+              >
                 <Link
                   to={`/${category.category}`}
                   className="flex flex-col gap-y-2 items-center"
@@ -150,10 +137,10 @@ const Home = () => {
                     {category.category}
                   </h4>
                 </Link>
-              </li>
+              </SwiperSlide>
             );
           })}
-        </ul>
+        </Swiper>
       </div>
       <div className="pt-16">
         <h3 className="text-3xl font-bold">Yangi kelgan mahsulotlar</h3>

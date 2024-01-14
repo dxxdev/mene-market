@@ -6,6 +6,8 @@ import arrowDown from "./icons/arrow-down.svg";
 import uzbekistanFlag from "./icons/uzbekistan-flag.svg";
 import russianFlag from "./icons/russian-flag.svg";
 import englandFlag from "./icons/england-flag.svg";
+import arrowRight from "./icons/arrow-right.svg";
+import profile from "./icons/profile.svg";
 
 export {
   shoppingCart,
@@ -16,4 +18,6 @@ export {
   uzbekistanFlag,
   russianFlag,
   englandFlag,
+  arrowRight,
+  profile,
 };
