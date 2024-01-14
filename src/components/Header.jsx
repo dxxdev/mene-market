@@ -53,6 +53,7 @@ const Header = () => {
             <ul className="flex items-center gap-6">
               <li className="hidden sm:block">
                 <NavLink
+                  aria-label="contact page link"
                   className="text-lg text-jet-black flex items-center gap-1 font-medium"
                   to={"/contact"}
                 >
@@ -121,6 +122,7 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
+                  aria-label="sign-up page link"
                   className="text-lg text-jet-black font-medium flex items-center gap-1"
                   to={"/signup"}
                 >
@@ -182,6 +184,7 @@ const Header = () => {
             </button>
           </div>
           <NavLink
+            aria-label="contact page link"
             className={`text-lg text-jet-black font-medium ${
               openMenu ? "flex sm:hidden" : "hidden"
             }`}
