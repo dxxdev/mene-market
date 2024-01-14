@@ -39,9 +39,9 @@ const ProductCard = ({ product, rendered }) => {
         </Swiper>
       </Link>
       <div className="pt-0 p-6 flex flex-col gap-y-2">
-        <h5 className="text-jet-black text-xl font-semibold leading-[112%]">
+        <b className="text-jet-black text-xl font-semibold leading-[112%]">
           {product.productName}
-        </h5>
+        </b>
         <div className="flex gap-3 items-center">
           <RatingBar product={product} />
           <p className="text-sm flex items-center space-x-px leading-4 font-normal text-jet-black">
