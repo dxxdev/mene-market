@@ -1,7 +1,7 @@
 import React from "react";
 import { styles } from "../styles";
 import { logoHeader } from "../assets/images";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -24,24 +24,24 @@ const Footer = () => {
         </div>
         <ul className="flex flex-col items-start gap-y-2">
           <li>
-            <Link className="text-base leading-[164%] text-soft-gray font-normal">
+            <NavLink className="text-base leading-[164%] text-soft-gray font-normal">
               Mening profilim
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="text-base leading-[164%] text-soft-gray font-normal">
+            <NavLink className="text-base leading-[164%] text-soft-gray font-normal">
               Sozlamalar
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="text-base leading-[164%] text-soft-gray font-normal">
+            <NavLink className="text-base leading-[164%] text-soft-gray font-normal">
               Aloqa
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="text-base leading-[164%] text-soft-gray font-normal">
+            <NavLink className="text-base leading-[164%] text-soft-gray font-normal">
               Ommaviy oferta
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <div className="flex flex-col items-start gap-y-2">
@@ -50,6 +50,7 @@ const Footer = () => {
           </p>
           <p>
             <a
+              aria-label="contact admin phone number"
               className="text-base leading-[164%] text-soft-gray font-normal"
               href="tel:+998998765432"
             >
@@ -58,6 +59,7 @@ const Footer = () => {
           </p>
           <p>
             <a
+              aria-label="contact admin email"
               className="text-base leading-[164%] text-soft-gray font-normal"
               href="mailto:example@gmail.com"
             >
@@ -66,7 +68,7 @@ const Footer = () => {
           </p>
           <ul className="flex gap-2.5 items-center">
             <li>
-              <a href="https://play.google.com">
+              <a aria-label="download the app" href="https://play.google.com">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -110,7 +112,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com">
+              <a aria-label="contact facebook" href="https://www.facebook.com">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -136,7 +138,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://twitter.com">
+              <a aria-label="contact twitter" href="https://twitter.com">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -164,7 +166,10 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://youtube.com">
+              <a
+                aria-label="subscribe to the youtube page"
+                href="https://youtube.com"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

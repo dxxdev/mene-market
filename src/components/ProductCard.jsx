@@ -17,6 +17,7 @@ const ProductCard = ({ product, rendered }) => {
   return (
     <li className="flex shadow-md flex-col overflow-hidden gap-y-4 rounded-3xl">
       <Link
+        aria-label="product detail"
         className="overflow-hidden"
         to={`/${product.category.categoryName}/${product.productName}`}
       >
@@ -61,7 +62,13 @@ const ProductCard = ({ product, rendered }) => {
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <button onClick={()=>navigate(`/${product.category}/${product.productName}`)} className={`gradient-btn relative hover:opacity-90`}>
+          <button
+            aria-label="product detail page button"
+            onClick={() =>
+              navigate(`/${product.category}/${product.productName}`)
+            }
+            className={`gradient-btn relative hover:opacity-90`}
+          >
             <span>
               <img src={shoppingCart} alt="" />
             </span>
@@ -70,6 +77,7 @@ const ProductCard = ({ product, rendered }) => {
             </span>
           </button>
           <button
+            aria-label="liked button"
             onClick={() => {
               savedProduct(product);
               rendered((prev) => !prev);

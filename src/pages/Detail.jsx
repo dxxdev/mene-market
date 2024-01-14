@@ -57,6 +57,7 @@ const Detail = () => {
           <div className="h-full overflow-hidden flex justify-center items-center relative max-h-[400px] lg:max-h-[600px]">
             <div className="absolute top-1/2 left-0 w-full flex justify-between items-center -translate-y-1/2 px-2">
               <button
+                aria-label="back image button"
                 className="opacity-75"
                 onClick={() =>
                   setActiveImage((prev) => {
@@ -82,6 +83,7 @@ const Detail = () => {
                 </svg>
               </button>
               <button
+                aria-label="next image button"
                 className="opacity-75"
                 onClick={() =>
                   setActiveImage((prev) => {
@@ -122,6 +124,7 @@ const Detail = () => {
             </p>
             <RatingBar product={info} />
             <button
+              aria-label="liked product button"
               onClick={() => {
                 savedProduct(info);
                 setRender((prev) => !prev);
@@ -179,6 +182,7 @@ const Detail = () => {
             <div className="flex items-center gap-2.5">
               <div className="flex border border-jet-black justify-between rounded-full p-1.5 gap-3 items-center">
                 <button
+                  aria-label="remove count product"
                   disabled={info.countProduct == 1 ? true : false}
                   className={`${
                     info.countProduct == 1 ? "opacity-60" : "opacity-100"
@@ -217,6 +221,7 @@ const Detail = () => {
                 </button>
                 <p>{info.countProduct}</p>
                 <button
+                  aria-label="add count product"
                   disabled={
                     info.countProduct == info.colors[activeColor].theRest
                       ? true
@@ -402,7 +407,10 @@ const Detail = () => {
                   })}
                 </Select>
               </div>
-              <button className="gradient-btn flex justify-center items-center !px-4 hover:opacity-90">
+              <button
+                aria-label="buying product"
+                className="gradient-btn flex justify-center items-center !px-4 hover:opacity-90"
+              >
                 <span className="text-base leading-[164%] font-normal text-white">
                   Xarid qilish
                 </span>

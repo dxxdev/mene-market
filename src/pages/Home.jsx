@@ -43,7 +43,10 @@ const Home = () => {
                   90% gacha chegirma
                 </p>
               </div>
-              <button className="bg-jet-black transition-all active:bg-jet-black/80 hover:bg-jet-black/90 hover:gap-4 hover:px-5 rounded-full py-3 px-6 flex gap-2 items-center border border-jet-black">
+              <button
+                aria-label="buying products"
+                className="bg-jet-black transition-all active:bg-jet-black/80 hover:bg-jet-black/90 hover:gap-4 hover:px-5 rounded-full py-3 px-6 flex gap-2 items-center border border-jet-black"
+              >
                 <p className="text-white  text-lg leading-5 font-medium">
                   Harid qilish
                 </p>
@@ -64,7 +67,10 @@ const Home = () => {
                   90% gacha chegirma
                 </p>
               </div>
-              <button className="bg-jet-black transition-all active:bg-jet-black/80 hover:bg-jet-black/90 hover:gap-4 hover:px-5 rounded-full py-3 px-6 flex gap-2 items-center border border-jet-black">
+              <button
+                aria-label="buying products"
+                className="bg-jet-black transition-all active:bg-jet-black/80 hover:bg-jet-black/90 hover:gap-4 hover:px-5 rounded-full py-3 px-6 flex gap-2 items-center border border-jet-black"
+              >
                 <p className="text-white  text-lg leading-5 font-medium">
                   Harid qilish
                 </p>
@@ -117,6 +123,7 @@ const Home = () => {
                 className="group flex justify-center items-center"
               >
                 <Link
+                  aria-label="category page link"
                   to={`/${category.category}`}
                   className="flex flex-col gap-y-2 items-center"
                 >

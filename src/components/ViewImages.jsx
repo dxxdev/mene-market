@@ -16,6 +16,7 @@ const ViewImages = ({ images, index, setActiveImage, setOpenViewImage }) => {
         alt=""
       />
       <button
+        aria-label="back image button"
         onClick={() =>
           setActiveImage((prev) => {
             if (prev == 0) {
@@ -41,6 +42,7 @@ const ViewImages = ({ images, index, setActiveImage, setOpenViewImage }) => {
         </svg>
       </button>
       <button
+        aria-label="next image button"
         onClick={() =>
           setActiveImage((prev) => {
             if (prev == images.length - 1) {

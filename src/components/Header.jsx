@@ -30,7 +30,7 @@ const Header = () => {
             openMenu ? "border-b-black" : "border-b-transparent"
           } py-3 sm:py-6 flex justify-between items-center`}
         >
-          <Link to={"/"}>
+          <Link aria-label="back to home link" to={"/"}>
             <h1>
               <img src={logoHeader} width={"96px"} height={"48px"} alt="" />
             </h1>
@@ -42,7 +42,10 @@ const Header = () => {
               className="outline-none bg-transparent w-full text-lg font-medium text-jet-black"
               placeholder="Search"
             />
-            <button onClick={() => searchInput.current.focus()}>
+            <button
+              aria-label="search focus button"
+              onClick={() => searchInput.current.focus()}
+            >
               <img src={search} alt="" />
             </button>
           </div>
@@ -68,7 +71,10 @@ const Header = () => {
                   placement="bottom-end"
                 >
                   <MenuHandler>
-                    <div className="flex items-center gap-1">
+                    <button
+                      aria-label="select language"
+                      className="flex items-center gap-1"
+                    >
                       <span>
                         <img src={global} alt="" />
                       </span>
@@ -78,7 +84,7 @@ const Header = () => {
                       <span>
                         <img src={arrowDown} alt="" />
                       </span>
-                    </div>
+                    </button>
                   </MenuHandler>
                   <MenuList>
                     <MenuItem
@@ -126,6 +132,7 @@ const Header = () => {
               </li>
               <li className="block md:hidden">
                 <button
+                  aria-label="responsive navbar opened button"
                   onClick={() => setOpenMenu((prev) => !prev)}
                   className={`p-1 h-7 flex flex-col justify-between`}
                 >
@@ -167,29 +174,11 @@ const Header = () => {
               className="outline-none w-full text-lg bg-transparent font-medium text-jet-black"
               placeholder="Search"
             />
-            <button onClick={() => searchInput.current.focus()}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-                  stroke="#13181F"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M21 21L16.65 16.65"
-                  stroke="#13181F"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <button
+              aria-label="search focus button"
+              onClick={() => searchInput.current.focus()}
+            >
+              <img src={search} alt="" />
             </button>
           </div>
           <NavLink
