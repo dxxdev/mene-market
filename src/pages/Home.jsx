@@ -11,7 +11,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { iphones, techniques } from "../assets/images";
 import "../styles/swiperStyle.css";
 import { Link } from "react-router-dom";
-import { categoryProduct, products } from "../data/data";
+import { categoryProduct, products, siteLanguage } from "../data/data";
 import ProductCard from "../components/ProductCard";
 import { arrowRight } from "../assets/icons";
 
@@ -20,26 +20,30 @@ const Home = () => {
   useEffect(() => {
     document.title = "Mene Market";
   }, []);
+  useEffect(() => {
+    setRender((prev) => !prev);
+  }, [siteLanguage]);
 
   return (
     <div className={`${styles.container}`}>
       <div className="pt-12 pb-6">
         <Swiper
           pagination={true}
+          spaceBetween={10}
           loop={true}
           modules={[Autoplay, Pagination]}
           autoplay={{
             delay: 5000,
           }}
-          className="mySwiper bg-earth-green shadow-2xl swiper-pagination-style"
+          className="mySwiper bg-earth-green pb-5 swiper-pagination-style"
         >
-          <SwiperSlide className="flex px-3 md:px-6 py-6 flex-col-reverse gap-y-10 md:justify-between md:flex-row items-center">
-            <div className="flex flex-col items-center gap-y-6">
+          <SwiperSlide className="flex px-3 py-6 h-full rounded-xl flex-col-reverse justify-between md:flex-row items-center">
+            <div className="flex flex-col items-center justify-between h-full gap-6">
               <div className="flex flex-col gap-y-2 w-full max-w-md">
                 <h2 className="text-center text-3xl font-bold text-white">
                   Bayram oldi aksiyamizda ishtirok eting
                 </h2>
-                <p className="text-left md:text-center text-lg text-white font-medium leading-5">
+                <p className="text-center text-lg text-white font-medium leading-5">
                   90% gacha chegirma
                 </p>
               </div>
@@ -53,18 +57,18 @@ const Home = () => {
                 <img src={arrowRight} alt="" />
               </button>
             </div>
-            <div className="w-full md:max-w-xs lg:max-w-md">
-              <img src={techniques} className="w-full" alt="Banner" />
+            <div className="w-full flex justify-center md:max-w-xs lg:max-w-md">
+              <img src={techniques} className=" max-h-28" alt="Banner" />
             </div>
           </SwiperSlide>
-          <SwiperSlide className="flex px-3 md:px-6 py-6 flex-col-reverse gap-y-10 md:justify-between md:flex-row items-center">
-            <div className="flex flex-col items-center gap-y-6">
+          <SwiperSlide className="flex px-3 py-6 h-full rounded-xl justify-between flex-col-reverse md:flex-row items-center">
+            <div className="flex flex-col items-center justify-between h-full gap-6">
               <div className="flex flex-col gap-y-2 w-full max-w-md">
                 <h2 className="text-center text-3xl font-bold text-white">
-                  Bayram oldi aksiyamizda ishtirok eting
+                  Barcha rangdagi iPhonelar aksiyada
                 </h2>
-                <p className="text-left md:text-center text-lg text-white font-medium leading-5">
-                  90% gacha chegirma
+                <p className="text-center text-lg text-white font-medium leading-5">
+                  25% gacha chegirma
                 </p>
               </div>
               <button
@@ -77,8 +81,8 @@ const Home = () => {
                 <img src={arrowRight} alt="" />
               </button>
             </div>
-            <div className="w-full md:max-w-xs lg:max-w-md">
-              <img src={iphones} className="w-full" alt="Banner" />
+            <div className="w-full flex justify-center items-center md:max-w-xs lg:max-w-md">
+              <img src={iphones} className="h-28" alt="Banner" />
             </div>
           </SwiperSlide>
         </Swiper>
@@ -128,10 +132,10 @@ const Home = () => {
                   className="flex flex-col gap-y-2 items-center"
                 >
                   <div
-                    className={`w-32 group-hover:bg-${category.color[0]}/50 transition-all duration-300 aspect-square rounded-full flex justify-center items-center bg-${category.color[0]}`}
+                    className={`w-32 group-hover:bg-${category.color[0]}/75 transition-all duration-300 aspect-square rounded-full flex justify-center items-center bg-${category.color[0]}`}
                   >
                     <div
-                      className={`w-24 group-hover:bg-${category.color[1]}/50 transition-all duration-300 aspect-square rounded-full flex justify-center items-center bg-${category.color[1]}`}
+                      className={`w-24 group-hover:bg-${category.color[1]}/75 transition-all duration-300 aspect-square rounded-full flex justify-center items-center bg-${category.color[1]}`}
                     >
                       <img
                         className="transition-all drop-shadow-2xl duration-300 group-hover:scale-110"

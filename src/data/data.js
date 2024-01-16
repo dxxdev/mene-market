@@ -103,3 +103,5 @@ export const categoryProduct = category.map((item, index) => {
 export const savedProduct = (product) => {
   product.saved = !product.saved;
 };
+
+export let siteLanguage = "UZB";

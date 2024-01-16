@@ -30,7 +30,7 @@ const ProductCard = ({ product, rendered }) => {
             return (
               <SwiperSlide
                 key={index}
-                className="flex justify-center items-center"
+                className="flex justify-center overflow-hidden rounded-3xl items-center"
               >
                 <img src={image} alt="" />
               </SwiperSlide>
