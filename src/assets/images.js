@@ -11,6 +11,8 @@ import electronics from "../assets/img/electronics.png";
 // product img import
 import JBLsimsizQuloqchinAmetist from "./img/JBL-simsiz-quloqchin-ametist.jpg";
 import JBLsimsizQuloqchinAlvon from "./img/JBL-simsiz-quloqchin-alvon.jpg";
+import JBLsimsizQuloqchinOq from "./img/JBL-simsiz-quloqchin-oq.jpg";
+import JBLsimsizQuloqchinQora from "./img/JBL-simsiz-quloqchin-qora.jpg";
 
 // logo export
 export { logoHeader };
@@ -25,4 +27,6 @@ export { electronics };
 export {
   JBLsimsizQuloqchinAmetist,
   JBLsimsizQuloqchinAlvon,
+  JBLsimsizQuloqchinOq,
+  JBLsimsizQuloqchinQora,
 };

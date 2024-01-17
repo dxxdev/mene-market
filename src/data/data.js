@@ -2,6 +2,8 @@ import { v4 as randomId } from "uuid";
 import {
   JBLsimsizQuloqchinAlvon,
   JBLsimsizQuloqchinAmetist,
+  JBLsimsizQuloqchinOq,
+  JBLsimsizQuloqchinQora,
   electronics,
 } from "../assets/images";
 
@@ -26,7 +28,12 @@ export const products = [
     howMuchDiscount: function () {
       return 100 * this.discount;
     },
-    images: [JBLsimsizQuloqchinAmetist, JBLsimsizQuloqchinAlvon],
+    images: [
+      JBLsimsizQuloqchinAmetist,
+      JBLsimsizQuloqchinAlvon,
+      JBLsimsizQuloqchinOq,
+      JBLsimsizQuloqchinQora,
+    ],
     colors: [
       {
         colorName: "Ametist",
@@ -40,34 +47,18 @@ export const products = [
         image: 1,
         theRest: 1,
       },
-      // {
-      //   colorName: "Oq",
-      //   active: false,
-      // },
-      // {
-      //   colorName: "Qizil",
-      //   active: false,
-      // },
-      // {
-      //   colorName: "Havorang",
-      //   active: false,
-      // },
-      // {
-      //   colorName: "Och yashil",
-      //   active: false,
-      // },
-      // {
-      //   colorName: "Metall kulrang",
-      //   active: false,
-      // },
-      // {
-      //   colorName: "Binafsha",
-      //   active: false,
-      // },
-      // {
-      //   colorName: "Qora",
-      //   active: false,
-      // },
+      {
+        colorName: "Oq",
+        active: false,
+        image: 2,
+        theRest: 34,
+      },
+      {
+        colorName: "Qora",
+        active: false,
+        image: 3,
+        theRest: 12,
+      },
     ],
     countProduct: 1,
     reservations: 1000,
