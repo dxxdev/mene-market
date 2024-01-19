@@ -23,7 +23,8 @@ const ProductCard = ({ product, rendered }) => {
       >
         <Swiper
           autoplay={{ delay: 3000 }}
-          modules={[Autoplay]}
+          loop={true}
+          modules={[Autoplay]}npm run 
           className="mySwiper h-80"
         >
           {product.images.slice(0, 4).map((image, index) => {
@@ -38,28 +39,30 @@ const ProductCard = ({ product, rendered }) => {
           })}
         </Swiper>
       </Link>
-      <div className="pt-0 p-6 flex flex-col gap-y-2">
-        <b className="text-jet-black text-xl font-semibold leading-[112%]">
-          {product.productName}
-        </b>
-        <div className="flex gap-3 items-center">
-          <RatingBar product={product} />
-          <p className="text-sm flex items-center space-x-px leading-4 font-normal text-jet-black">
-            <span>{product.rating}</span>
-            <span>/</span>
-            <span className="text-dark-gray">5</span>
-          </p>
-        </div>
-        <div className="flex items-center gap-2.5">
-          <p className="text-xl leading-[112%] font-semibold text-jet-black">
-            ${product.discountPrice()}
-          </p>
-          <p className="text-xl leading-[112%] font-semibold text-dark-gray">
-            <del>${product.price}</del>
-          </p>
-          <span className="px-[14px] py-1.5 rounded-full text-sm leading-[112%] font-normal bg-off-red text-red-velvet">
-            -${product.howMuchDiscount()}%
-          </span>
+      <div className="pt-0 p-6 flex flex-col grow gap-y-2 justify-between">
+        <div className="flex flex-col gap-y-2">
+          <b className="text-jet-black text-xl font-semibold leading-[112%]">
+            {product.productName}
+          </b>
+          <div className="flex gap-3 items-center">
+            <RatingBar product={product} />
+            <p className="text-sm flex items-center space-x-px leading-4 font-normal text-jet-black">
+              <span>{product.rating}</span>
+              <span>/</span>
+              <span className="text-dark-gray">5</span>
+            </p>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <p className="text-xl leading-[112%] font-semibold text-jet-black">
+              ${product.discountPrice()}
+            </p>
+            <p className="text-xl leading-[112%] font-semibold text-dark-gray">
+              <del>${product.price}</del>
+            </p>
+            <span className="px-[14px] py-1.5 rounded-full text-sm leading-[112%] font-normal bg-off-red text-red-velvet">
+              -${product.howMuchDiscount()}%
+            </span>
+          </div>
         </div>
         <div className="flex items-center justify-between">
           <button

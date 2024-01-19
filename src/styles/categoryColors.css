@@ -4,9 +4,21 @@
 .group:hover .group-hover\:bg-blue-300\/75 {
   background-color: rgb(100 181 246 / 0.75);
 }
+.group:hover .group-hover\:bg-purple-100\/75 {
+  background-color: rgb(197 190 238 / 0.75);
+}
+.group:hover .group-hover\:bg-purple-300\/75 {
+  background-color: rgb(160 149 228 / 0.75);
+}
 .bg-blue-300 {
   background-color: rgb(100 181 246);
 }
 .bg-blue-100 {
   background-color: rgb(187 222 251);
+}
+.bg-purple-100 {
+  background-color: rgb(197 190 238);
+}
+.bg-purple-300 {
+  background-color: rgb(160 149 228);
 }
