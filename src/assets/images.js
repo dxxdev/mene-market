@@ -8,6 +8,7 @@ import techniques from "./hero-img/techniques.png";
 // category img import
 import electronics from "../assets/img/electronics.png";
 import telephones from "../assets/img/telephones.png";
+import computers from "../assets/img/computers.png";
 
 // product img import
 import JBLsimsizQuloqchinAmetist from "./img/JBL-simsiz-quloqchin-ametist.jpg";
@@ -24,6 +25,13 @@ import BloodyJ90SOyinSichqonchasi4 from "./img/Bloody-J90S-oyin-sichqonchasi-4.j
 import iPhone14ProQora from "./img/iPhone-14-pro-qora.jpg";
 import iPhone14ProTilla from "./img/iPhone-14-pro-tilla.jpg";
 import iPhone14ProBinafsha from "./img/iPhone-14-pro-binafsha.jpg";
+import transformerCaseOq1 from "./img/transformer-case-oq-1.jpg";
+import transformerCaseOq2 from "./img/transformer-case-oq-2.jpg";
+import transformerCaseQora1 from "./img/transformer-case-qora-1.jpg";
+import transformerCaseQora2 from "./img/transformer-case-qora-2.jpg";
+import zalmanCaseOq from "./img/zalman-case-oq.jpg";
+import zalmanCaseKulrang from "./img/zalman-case-kulrang.jpg";
+import zalmanCaseQora from "./img/zalman-case-qora.jpg";
 
 // logo export
 export { logoHeader };
@@ -32,7 +40,7 @@ export { logoHeader };
 export { iphones, techniques };
 
 // category img export
-export { electronics, telephones };
+export { electronics, telephones, computers };
 
 // product img export
 export {
@@ -50,4 +58,11 @@ export {
   iPhone14ProQora,
   iPhone14ProTilla,
   iPhone14ProBinafsha,
+  transformerCaseOq1,
+  transformerCaseOq2,
+  transformerCaseQora1,
+  transformerCaseQora2,
+  zalmanCaseKulrang,
+  zalmanCaseOq,
+  zalmanCaseQora,
 };

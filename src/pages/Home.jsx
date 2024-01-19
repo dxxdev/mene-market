@@ -138,7 +138,7 @@ const Home = () => {
                       className={`w-24 group-hover:bg-${category.color[1]}/75 transition-all duration-300 aspect-square rounded-full flex justify-center items-center bg-${category.color[1]}`}
                     >
                       <img
-                        className="transition-all drop-shadow-2xl duration-300 group-hover:scale-110"
+                        className="transition-all h-16 drop-shadow-2xl duration-300 group-hover:scale-110"
                         src={category.image}
                         alt=""
                       />

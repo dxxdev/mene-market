@@ -22,9 +22,11 @@ const ProductCard = ({ product, rendered }) => {
         to={`/${product.category.categoryName}/${product.productName}`}
       >
         <Swiper
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: Math.floor(Math.random() * 4000 + 3000) }}
           loop={true}
-          modules={[Autoplay]}npm run 
+          modules={[Autoplay]}
+          npm
+          run
           className="mySwiper h-80"
         >
           {product.images.slice(0, 4).map((image, index) => {

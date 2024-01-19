@@ -11,11 +11,19 @@ import {
   aqlliSoatSmartBandM7Kok,
   aqlliSoatSmartBandM7Qora,
   aqlliSoatSmartBandM7ToqKok,
+  computers,
   electronics,
   iPhone14ProBinafsha,
   iPhone14ProQora,
   iPhone14ProTilla,
   telephones,
+  transformerCaseOq1,
+  transformerCaseOq2,
+  transformerCaseQora1,
+  transformerCaseQora2,
+  zalmanCaseKulrang,
+  zalmanCaseOq,
+  zalmanCaseQora,
 } from "../assets/images";
 
 export const products = [
@@ -219,6 +227,125 @@ export const products = [
     ],
     countProduct: 1,
     reservations: 9,
+    rating: 5,
+    saved: false,
+    isItNew: true,
+    top: true,
+  },
+  {
+    id: randomId(),
+    productName: "O'yin kompyuteri Transformers",
+    description: [
+      "RGB yoritgichli o'yin qutisi",
+      "Protsessor Intel® Core™ i5-12400F 18 MB kesh, 4,40 gigagertsgacha Jami yadrolar - 6, jami iplar - 12",
+      "Sovutgich: tdp120 RGB",
+      "MB: H610 - 12-avlod Intel® Core™ protsessorlari va 13-avlod Intel® Processors™ protsessorlarini (LGA1700) qo'llab-quvvatlaydi",
+      "SSD1: 128 GB (Windows o'rnatilgan)",
+      "SSD2: 512GB NVMe M.2 (oʻyinlar yoki dasturlar uchun) oʻqish tezligi 3500 MB/s gacha)",
+      "RAM: DDR4 16GB - 2 dona 8gb 3200mhz (vaqtinchalik xotira)",
+      "VGA: Aks - 8GB ATI Radeon RX580 128Bit GDDR5 - har qanday o'yinlar, har qanday dasturlar.",
+      "CASE: FC TRANSFORMERS.",
+      "PSU: 750w",
+      "Windows 10 da Windows 7 (start) ga o'xshash sozlamalar bilan yangi tizim o'rnatildi.",
+      "Barcha mahalliy DRIVERLAR, shuningdek, ofis ishlari uchun zarur dastlabki dasturlar (WORD - EXCEL), shu jumladan o'rnatilgan.",
+      "Kompyuter ham kuchli o'yinlar, ham grafik ishlari uchun mos.",
+      "ShK yig'ilgan kundan boshlab olti oygacha bo'lgan kafolat, yig'ish sanasi korpus muhrida ko'rsatilgan, agar muhr buzilgan (yirtilgan, yirtilgan, shikastlangan) bo'lsa, kafolat butunlay bekor qilinadi va bo'lmaydi. yaroqli.",
+    ],
+    category: {
+      categoryName: "Kompyuterlar",
+      categoryImage: computers,
+      categoryColors: ["blue-100", "blue-300"],
+    },
+    price: 900, // dollars are determined
+    discount: 0.2,
+    discountPrice: function () {
+      return this.price - this.price * this.discount;
+    },
+    howMuchDiscount: function () {
+      return 100 * this.discount;
+    },
+    images: [
+      transformerCaseOq1,
+      transformerCaseOq2,
+      transformerCaseQora1,
+      transformerCaseQora2,
+    ],
+    colors: [
+      {
+        colorName: "Oq",
+        active: true,
+        image: 0,
+        theRest: 3,
+      },
+      {
+        colorName: "Qora",
+        active: false,
+        image: 2,
+        theRest: 4,
+      },
+    ],
+    countProduct: 1,
+    reservations: 4,
+    rating: 5,
+    saved: false,
+    isItNew: true,
+    top: true,
+  },
+  {
+    id: randomId(),
+    productName: "O'yin kompyuteri Zalman",
+    description: [
+      "RGB yoritgichli o'yin qutisi",
+      "CPU: Intel® Core™ i5-12400F 18 MB kesh, 4,40 gigagertsgacha 6x-yadrolari 12x-oqadi",
+      "Sovutgich: tdp120 RGB",
+      "MB: H610 - 12-avlod Intel® Core™ protsessorlarini va 13-avlod Intel® Processor™ protsessorlarini (LGA1700) qo'llab-quvvatlaydi",
+      "SSD1: 256 GB",
+      "SSD2: 1000 GB NVMe M.2 O'qish tezligi 3500 MB/s gacha",
+      "RAM: DDR4 32GB 2 dona x 16GB 3200MGts (vaqtinchalik xotira)",
+      "VGA: GeForce® RTX 3070 - 8 GB har qanday o'yin, har qanday dastur",
+      "CASE: Zalman i3 Neo 4narsalar RGB sovutgichlari",
+      "PSU: DeepCool PF700 700W 80+ ATX",
+      "Windows 11 da Windows 7 (start) kabi sozlamalar bilan yangi tizim o'rnatilgan",
+      "Barcha mahalliy DRIVERLAR, shuningdek, ofis ishlari uchun zarur bo'lgan dastlabki dasturlar (WORD - EXCEL) o'rnatilgan",
+      "Kompyuter ham kuchli o'yinlar, ham grafiklar uchun mos",
+      "Kafolat - ShK yig'ilgan kundan boshlab olti oygacha, yig'ish sanasi korpusning muhrida belgilanadi, agar muhr buzilgan bo'lsa (yirtilgan, uzilgan,, buzilgan), u holda kafolat butunlay bekor qilinadi.",
+    ],
+    category: {
+      categoryName: "Kompyuterlar",
+      categoryImage: computers,
+      categoryColors: ["blue-100", "blue-300"],
+    },
+    price: 1500, // dollars are determined
+    discount: 0.2,
+    discountPrice: function () {
+      return this.price - this.price * this.discount;
+    },
+    howMuchDiscount: function () {
+      return 100 * this.discount;
+    },
+    images: [zalmanCaseOq, zalmanCaseKulrang, zalmanCaseQora],
+    colors: [
+      {
+        colorName: "Oq",
+        active: true,
+        image: 0,
+        theRest: 3,
+      },
+      {
+        colorName: "Kulrang",
+        active: true,
+        image: 1,
+        theRest: 3,
+      },
+      {
+        colorName: "Qora",
+        active: false,
+        image: 2,
+        theRest: 4,
+      },
+    ],
+    countProduct: 1,
+    reservations: 12,
     rating: 5,
     saved: false,
     isItNew: true,
