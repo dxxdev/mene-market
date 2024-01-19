@@ -9,6 +9,8 @@ import techniques from "./hero-img/techniques.png";
 import electronics from "../assets/img/electronics.png";
 import telephones from "../assets/img/telephones.png";
 import computers from "../assets/img/computers.png";
+import books from "../assets/img/books.png";
+import medicine from "../assets/img/medicine.png";
 
 // product img import
 import JBLsimsizQuloqchinAmetist from "./img/JBL-simsiz-quloqchin-ametist.jpg";
@@ -32,6 +34,16 @@ import transformerCaseQora2 from "./img/transformer-case-qora-2.jpg";
 import zalmanCaseOq from "./img/zalman-case-oq.jpg";
 import zalmanCaseKulrang from "./img/zalman-case-kulrang.jpg";
 import zalmanCaseQora from "./img/zalman-case-qora.jpg";
+import millionDollarlikXatolar1 from "./img/million-dollarlik-xatolar-1.jpg";
+import millionDollarlikXatolar2 from "./img/million-dollarlik-xatolar-2.jpg";
+import millionDollarlikXatolar3 from "./img/million-dollarlik-xatolar-3.jpg";
+import liderningOltinKitobi1 from "./img/liderning-oltin-kitobi-1.jpg";
+import liderningOltinKitobi2 from "./img/liderning-oltin-kitobi-2.jpg";
+import liderningOltinKitobi3 from "./img/liderning-oltin-kitobi-3.jpg";
+import vitaminD310ml1 from "./img/vitamin-d3-10ml-1.jpg";
+import vitaminD310ml2 from "./img/vitamin-d3-10ml-2.jpg";
+import vitaminD310ml3 from "./img/vitamin-d3-10ml-3.jpg";
+import vitaminD310ml4 from "./img/vitamin-d3-10ml-4.jpg";
 
 // logo export
 export { logoHeader };
@@ -40,7 +52,7 @@ export { logoHeader };
 export { iphones, techniques };
 
 // category img export
-export { electronics, telephones, computers };
+export { electronics, telephones, computers, books, medicine };
 
 // product img export
 export {
@@ -65,4 +77,14 @@ export {
   zalmanCaseKulrang,
   zalmanCaseOq,
   zalmanCaseQora,
+  millionDollarlikXatolar1,
+  millionDollarlikXatolar2,
+  millionDollarlikXatolar3,
+  liderningOltinKitobi1,
+  liderningOltinKitobi2,
+  liderningOltinKitobi3,
+  vitaminD310ml1,
+  vitaminD310ml2,
+  vitaminD310ml3,
+  vitaminD310ml4,
 };

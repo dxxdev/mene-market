@@ -291,7 +291,7 @@ const Detail = () => {
             <p>Narxi:</p>
             <div className="flex gap-2.5 items-center">
               <p className="text-xl leading-[112%] font-semibold text-jet-black">
-                ${info.discountPrice() * info.countProduct}
+                ${(info.discountPrice() * info.countProduct).toFixed(0)}
               </p>
               <p className="text-xl leading-[112%] font-semibold text-dark-gray">
                 <del>${info.price * info.countProduct}</del>

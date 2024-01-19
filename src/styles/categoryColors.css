@@ -10,6 +10,18 @@
 .group:hover .group-hover\:bg-purple-300\/75 {
   background-color: rgb(160 149 228 / 0.75);
 }
+.group:hover .group-hover\:bg-green-100\/75 {
+  background-color: rgb(193 244 175 / 0.75);
+}
+.group:hover .group-hover\:bg-green-300\/75 {
+  background-color: rgb(144, 235, 112 / 0.75);
+}
+.group:hover .group-hover\:bg-red-100\/75 {
+  background-color: rgb(250, 174, 173 / 0.75);
+}
+.group:hover .group-hover\:bg-red-300\/75 {
+  background-color: rgb(245, 102, 102 / 0.75);
+}
 .bg-blue-300 {
   background-color: rgb(100 181 246);
 }
@@ -21,4 +33,16 @@
 }
 .bg-purple-300 {
   background-color: rgb(160 149 228);
+}
+.bg-green-100 {
+  background-color: rgb(193, 244, 175);
+}
+.bg-green-300 {
+  background-color: rgb(144, 235, 112);
+}
+.bg-red-100 {
+  background-color: rgb(250, 174, 173);
+}
+.bg-red-300 {
+  background-color: rgb(245, 102, 102);
 }

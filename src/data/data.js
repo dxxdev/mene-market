@@ -11,16 +11,28 @@ import {
   aqlliSoatSmartBandM7Kok,
   aqlliSoatSmartBandM7Qora,
   aqlliSoatSmartBandM7ToqKok,
+  books,
   computers,
   electronics,
   iPhone14ProBinafsha,
   iPhone14ProQora,
   iPhone14ProTilla,
+  liderningOltinKitobi1,
+  liderningOltinKitobi2,
+  liderningOltinKitobi3,
+  medicine,
+  millionDollarlikXatolar1,
+  millionDollarlikXatolar2,
+  millionDollarlikXatolar3,
   telephones,
   transformerCaseOq1,
   transformerCaseOq2,
   transformerCaseQora1,
   transformerCaseQora2,
+  vitaminD310ml1,
+  vitaminD310ml2,
+  vitaminD310ml3,
+  vitaminD310ml4,
   zalmanCaseKulrang,
   zalmanCaseOq,
   zalmanCaseQora,
@@ -346,6 +358,125 @@ export const products = [
     ],
     countProduct: 1,
     reservations: 12,
+    rating: 5,
+    saved: false,
+    isItNew: true,
+    top: true,
+  },
+  {
+    id: randomId(),
+    productName: "Million dollarlik xatolar",
+    description: [
+      "O'z tajribasini boshqalar bilan bo'lishish haqiqiy tadbirkorning eng muhim xususiyatlaridan biridir.",
+      `Kitob muallifi Pavel Annenkov "Million dollarlik xatolar" asarida tadbirkorlikning eng muhim savollariga javob berishga va boshqalarning xatolarini takrorlamaslikka yordam beradi.Watkom kompaniyasi prezidenti, Roman Skoroxodov ta'rifi bilan aytganda, ushbu kitob biznes bilan shug'ullanmoqchi bo'lganlar uchun "YO'L XARITASIDIR". Hamma narsa aniq, bosqichma-bosqich, vaziyatlar haqiqiy va real hayot bilan uyg'un. Ushbu qo'llanma bilan biznesingiz uchun tezroq va yaxshiroq qarorlar qabul qilasiz. Ishoning, siz ham bunga erishasiz!`,
+      "Kitob tom ma'noda muvaffaqiyqtli tadbirkorlarning ommaviy e'tirofiga sazovar bo'lgan.",
+      "Ushbu kitob orqali siz amaldagi tadbirkorning bilim va tajribalariga ega boʼlasiz. Аlbatta, faoliyat davomida biznesni barbod qilishga oid omillar yetarlicha topiladi. Ushbu kitob sizlarni ana shu xatolar bilan birma-bir tanishtiradi. Chunki tadbirkorlik faoliyatini yuritayotgan inson ana shu xatolarga duch kelishi aniq. Shunday ekan, ushbu kitob Sizlarga yaqin koʼmakchi boʼladi, deb oʼylaymiz.",
+    ],
+    category: {
+      categoryName: "Kitoblar",
+      categoryImage: books,
+      categoryColors: ["green-100", "green-300"],
+    },
+    price: 6, // dollars are determined
+    discount: 0.2,
+    discountPrice: function () {
+      return this.price - this.price * this.discount;
+    },
+    howMuchDiscount: function () {
+      return 100 * this.discount;
+    },
+    images: [
+      millionDollarlikXatolar1,
+      millionDollarlikXatolar2,
+      millionDollarlikXatolar3,
+    ],
+    colors: [
+      {
+        colorName: "",
+        active: true,
+        image: 0,
+        theRest: 3,
+      },
+    ],
+    countProduct: 1,
+    reservations: 100,
+    rating: 4.8,
+    saved: false,
+    isItNew: true,
+    top: true,
+  },
+  {
+    id: randomId(),
+    productName: "Liderning oltin kitobi",
+    description: [
+      "Bu moʻjaz to‘plam boshliqlarning hayoti va faoliyati davomida uchraydigan muammolar, shuningdek, ularning yechimlariga doir tajribali lider hisoblangan Jon Baldonining lo‘nda maslahatlarini o‘zida mujassam qilgan. Maslahatlarda amaliy va taktik jihatlar ko‘zda tutilgan.",
+      "Tajribali yetakchilar bu kitobdan ayrim masalalarga mutlaqo boshqacha yondashish va o‘zlaridagi liderlik xislatlarini yana-da boyitishga undovchi misollarni topishadi. Yoshlar uchun esa bu kitob, eng avvalo, dolzarb va amaliy ahamiyat kasb etadi. Kitobni o‘qing – va rahbarlik qilishda davom eting!",
+    ],
+    category: {
+      categoryName: "Kitoblar",
+      categoryImage: books,
+      categoryColors: ["green-100", "green-300"],
+    },
+    price: 5, // dollars are determined
+    discount: 0.2,
+    discountPrice: function () {
+      return this.price - this.price * this.discount;
+    },
+    howMuchDiscount: function () {
+      return 100 * this.discount;
+    },
+    images: [
+      liderningOltinKitobi1,
+      liderningOltinKitobi2,
+      liderningOltinKitobi3,
+    ],
+    colors: [
+      {
+        colorName: "",
+        active: true,
+        image: 0,
+        theRest: 3,
+      },
+    ],
+    countProduct: 1,
+    reservations: 100,
+    rating: 5,
+    saved: false,
+    isItNew: true,
+    top: true,
+  },
+  {
+    id: randomId(),
+    productName: "Vitamin D3 10ml",
+    description: [
+      "D3 vitamini D vitaminining tabiiy shakli bo'lib, quyosh nuri ta'sirida inson terisida hosil bo'ladi. D3 vitaminining eng muhim vazifasi skeletning minerallashuvi va o'sishiga yordam beradigan kaltsiy va fosfat metabolizmini tartibga solishdir. Qonda kaltsiy ionlarining kontsentratsiyasi skelet mushaklarining mushak tonusini, miyokard funktsiyasini saqlashni belgilaydi, asab qo'zg'alishning o'tkazilishiga yordam beradi va qon ivish jarayonini tartibga soladi.",
+      "Oziq-ovqatda D3 vitaminining etishmasligi, uning so'rilishini buzish, shuningdek, bolaning tez o'sishi davrida quyoshga etarli darajada ta'sir qilmaslik kaltsiy etishmovchiligi va raxitning rivojlanishiga olib keladi, kattalarda - osteomalaziya, homilador ayollarda simptomlar paydo bo'lishi mumkin. tetaniya, yangi tug'ilgan chaqaloqlarning suyaklarini kalsifikatsiyalash jarayonlarining buzilishi.",
+      "D3 vitamini sitokin darajasini modulyatsiya qilish orqali immunitet tizimining ishlashida ishtirok etadi va T-yordamchi limfotsitlar bo'linishini va B-limfotsitlar differentsiatsiyasini tartibga soladi.",
+    ],
+    category: {
+      categoryName: "Salomatlik",
+      categoryImage: medicine,
+      categoryColors: ["red-100", "red-300"],
+    },
+    price: 5, // dollars are determined
+    discount: 0.2,
+    discountPrice: function () {
+      return this.price - this.price * this.discount;
+    },
+    howMuchDiscount: function () {
+      return 100 * this.discount;
+    },
+    images: [vitaminD310ml1, vitaminD310ml2, vitaminD310ml3, vitaminD310ml4],
+    colors: [
+      {
+        colorName: "",
+        active: true,
+        image: 0,
+        theRest: 3,
+      },
+    ],
+    countProduct: 1,
+    reservations: 100,
     rating: 5,
     saved: false,
     isItNew: true,
