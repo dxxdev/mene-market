@@ -595,7 +595,7 @@ function setCategoryToArray(arr) {
   return categoryArr;
 }
 
-const category = setCategoryToArray(products);
+export const category = setCategoryToArray(products);
 
 export const categoryProduct = category.map((item) => {
   let productIndex = products.find((product) => {
