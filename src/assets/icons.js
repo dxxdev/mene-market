@@ -8,6 +8,9 @@ import russianFlag from "./icons/russian-flag.svg";
 import englandFlag from "./icons/england-flag.svg";
 import arrowRight from "./icons/arrow-right.svg";
 import profile from "./icons/profile.svg";
+import car from "./icons/car.svg";
+import payment from "./icons/payment.svg";
+import chat from "./icons/chat.svg";
 
 export {
   shoppingCart,
@@ -20,4 +23,7 @@ export {
   englandFlag,
   arrowRight,
   profile,
+  car,
+  payment,
+  chat,
 };

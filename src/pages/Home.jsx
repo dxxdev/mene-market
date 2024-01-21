@@ -13,7 +13,8 @@ import "../styles/swiperStyle.css";
 import { Link, useNavigate } from "react-router-dom";
 import { categoryProduct, products, siteLanguage } from "../data/data";
 import ProductCard from "../components/ProductCard";
-import { arrowRight } from "../assets/icons";
+import { arrowRight, car, chat, payment } from "../assets/icons";
+import Service from "../components/Service";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -157,15 +158,18 @@ const Home = () => {
       <div className="pt-16 pb-6">
         <h3 className="text-3xl font-bold">Yangi kelgan mahsulotlar</h3>
         <ul className="pt-6 pb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {products.map((product) => {
-            return (
-              <ProductCard
-                key={product.id}
-                rendered={setRender}
-                product={product}
-              />
-            );
-          })}
+          {products
+            .filter((product) => product.isItNew)
+            .slice(0, 8)
+            .map((product) => {
+              return (
+                <ProductCard
+                  key={product.id}
+                  rendered={setRender}
+                  product={product}
+                />
+              );
+            })}
         </ul>
         <button
           onClick={() => navigate("/products")}
@@ -199,6 +203,80 @@ const Home = () => {
             </svg>
           </span>
         </button>
+      </div>
+      <div className="pt-16 pb-6">
+        <h3 className="text-3xl font-bold">Ommabop mahsulotlar</h3>
+        <ul className="pt-6 pb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products
+            .filter((product) => product.top)
+            .slice(0, 8)
+            .map((product) => {
+              return (
+                <ProductCard
+                  key={product.id}
+                  rendered={setRender}
+                  product={product}
+                />
+              );
+            })}
+        </ul>
+        <button
+          onClick={() => navigate("/products")}
+          className="px-6 py-3 border flex gap-2 rounded-full border-jet-black text-jet-black"
+        >
+          <span>Barchasini ko'rish</span>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M14.43 6.90979L20.5 12.9798L14.43 19.0498"
+                stroke="#13181F"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3.5 12.9797H20.33"
+                stroke="#13181F"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div className="pt-16 pb-6">
+        <h3 className="text-3xl font-bold">Mene market qulayliklari</h3>
+        <ul className="pt-6 pb-6 flex flex-wrap items-stretch justify-center content-start gap-8">
+          <Service
+            icon={car}
+            title="Tezkor yetkazib berish xizmati"
+            description="Buyurtmangiz O'zbekistonning barcha viloyatlariga 3 kun ichida yetqazib beriladi."
+          />
+          <Service
+            icon={payment}
+            title="To'lovni istalgan usulda amalga oshirish"
+            description="Buyurtmani oldindan click, payme yoki buyurtmani qo'lingizga olganingizdan keyin amalga oshiring."
+          />
+          <Service
+            icon={chat}
+            title="Bepul qo'llab-quvvatlash markazi"
+            description="Dam olish kunlarisiz qo'llab quvvatlash bo'limi mavjud. +998 99 876 54 32"
+          />
+          <Service
+            icon={car}
+            title="Mijozlarni rag'batlantirish tizimi"
+            description="Doimiy mijozlarimiz uchun sovg'alar va bonuslar taqdim etib boramiz."
+          />
+        </ul>
       </div>
     </div>
   );

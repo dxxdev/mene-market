@@ -37,3 +37,6 @@ input[type="number"]::-webkit-inner-spin-button {
   background: linear-gradient(105deg, #08c8f9 0%, #1a3edd 100%);
   @apply flex items-center gap-2 px-2.5 py-2 rounded-full transition-all duration-300 active:scale-90;
 }
+.gradient {
+  background: linear-gradient(105deg, #08c8f9 0%, #1a3edd 100%);
+}

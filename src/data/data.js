@@ -309,7 +309,7 @@ export const products = [
     reservations: 4,
     rating: 5,
     saved: false,
-    isItNew: true,
+    isItNew: false,
     top: true,
   },
   {
@@ -411,7 +411,7 @@ export const products = [
     reservations: 100,
     rating: 4.8,
     saved: false,
-    isItNew: true,
+    isItNew: false,
     top: true,
   },
   {
@@ -452,7 +452,7 @@ export const products = [
     rating: 5,
     saved: false,
     isItNew: true,
-    top: true,
+    top: false,
   },
   {
     id: randomId(),
@@ -489,7 +489,7 @@ export const products = [
     rating: 5,
     saved: false,
     isItNew: true,
-    top: true,
+    top: false,
   },
   {
     id: randomId(),
@@ -534,7 +534,7 @@ export const products = [
     reservations: 700,
     rating: 5,
     saved: false,
-    isItNew: true,
+    isItNew: false,
     top: true,
   },
   {
@@ -581,7 +581,7 @@ export const products = [
     rating: 5,
     saved: false,
     isItNew: true,
-    top: true,
+    top: false,
   },
 ];
 
