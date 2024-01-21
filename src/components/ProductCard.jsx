@@ -19,7 +19,7 @@ const ProductCard = ({ product, rendered }) => {
       <Link
         aria-label="product detail"
         className="overflow-hidden"
-        to={`/${product.category.categoryName}/${product.productName}`}
+        to={`/products/${product.category.categoryName}/${product.productName}`}
       >
         <Swiper
           autoplay={{ delay: Math.floor(Math.random() * 4000 + 3000) }}
@@ -71,7 +71,7 @@ const ProductCard = ({ product, rendered }) => {
             <button
               aria-label="product detail page button"
               onClick={() =>
-                navigate(`/${product.category}/${product.productName}`)
+                navigate(`/products/${product.category}/${product.productName}`)
               }
               className={`gradient-btn relative hover:opacity-90`}
             >

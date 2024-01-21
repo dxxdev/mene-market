@@ -9,6 +9,7 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import Products from "./pages/Products";
+import CategoryProducts from "./pages/CategoryProducts";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -16,6 +17,7 @@ const App = () => {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:category" element={<CategoryProducts />} />
         <Route path="/products/:category/:productName" element={<Detail />} />
       </Route>
     )

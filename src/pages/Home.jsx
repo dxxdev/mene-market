@@ -130,7 +130,7 @@ const Home = () => {
               >
                 <Link
                   aria-label="category page link"
-                  to={`/${category.category}`}
+                  to={`/products/${category.category}`}
                   className="flex flex-col gap-y-2 items-center"
                 >
                   <div

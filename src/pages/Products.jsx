@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styles } from "../styles";
 import { category, products } from "../data/data";
 import ProductCard from "../components/ProductCard";
@@ -6,6 +6,12 @@ import ProductCard from "../components/ProductCard";
 const Products = () => {
   const [categoryTabValue, setCategoryTabValue] = useState("all");
   const [render, setRender] = useState(false);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [categoryTabValue]);
   return (
     <div className={`${styles.container}`}>
       <div className="pt-12">
