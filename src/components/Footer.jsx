@@ -10,14 +10,14 @@ const Footer = () => {
         className={`${styles.container} flex flex-col gap-y-10 sm:flex-row px-10 sm:px-3 justify-between items-start`}
       >
         <div className="flex flex-col items-start gap-y-4">
-          <div className="w-[152px] h-[83px]">
+          <Link to={`/`} className="w-[152px] h-[83px]">
             <img
               src={logoHeader}
               width="100%"
               height="100%"
               alt="Mene Market"
             />
-          </div>
+          </Link>
           <p className="text-base font-normal leading-[164%] text-soft-gray">
             Copyright 2023 © All rights reserved
           </p>
@@ -39,7 +39,10 @@ const Footer = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="text-base leading-[164%] text-soft-gray font-normal">
+            <NavLink
+              to="/policy"
+              className="text-base leading-[164%] text-soft-gray font-normal"
+            >
               Ommaviy oferta
             </NavLink>
           </li>
