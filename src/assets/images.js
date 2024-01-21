@@ -11,6 +11,7 @@ import telephones from "../assets/img/telephones.png";
 import computers from "../assets/img/computers.png";
 import books from "../assets/img/books.png";
 import medicine from "../assets/img/medicine.png";
+import maishiyTexnika from "../assets/img/maishiy-texnika.png";
 
 // product img import
 import JBLsimsizQuloqchinAmetist from "./img/JBL-simsiz-quloqchin-ametist.jpg";
@@ -44,6 +45,14 @@ import vitaminD310ml1 from "./img/vitamin-d3-10ml-1.jpg";
 import vitaminD310ml2 from "./img/vitamin-d3-10ml-2.jpg";
 import vitaminD310ml3 from "./img/vitamin-d3-10ml-3.jpg";
 import vitaminD310ml4 from "./img/vitamin-d3-10ml-4.jpg";
+import termometrSoatOq1 from "./img/termometr-soat-oq-1.jpg";
+import termometrSoatOq2 from "./img/termometr-soat-oq-2.jpg";
+import termometrSoatKulrang1 from "./img/termometr-soat-kulrang-1.jpg";
+import termometrSoatKulrang2 from "./img/termometr-soat-kulrang-2.jpg";
+import aqlliRobotChangyutgich1 from "./img/aqlli-robot-changyutgich-1.jpg";
+import aqlliRobotChangyutgich2 from "./img/aqlli-robot-changyutgich-2.jpg";
+import aqlliRobotChangyutgich3 from "./img/aqlli-robot-changyutgich-3.jpg";
+import aqlliRobotChangyutgich4 from "./img/aqlli-robot-changyutgich-4.jpg";
 
 // logo export
 export { logoHeader };
@@ -52,7 +61,7 @@ export { logoHeader };
 export { iphones, techniques };
 
 // category img export
-export { electronics, telephones, computers, books, medicine };
+export { electronics, telephones, computers, books, medicine, maishiyTexnika };
 
 // product img export
 export {
@@ -87,4 +96,12 @@ export {
   vitaminD310ml2,
   vitaminD310ml3,
   vitaminD310ml4,
+  termometrSoatKulrang1,
+  termometrSoatKulrang2,
+  termometrSoatOq1,
+  termometrSoatOq2,
+  aqlliRobotChangyutgich1,
+  aqlliRobotChangyutgich2,
+  aqlliRobotChangyutgich3,
+  aqlliRobotChangyutgich4,
 };

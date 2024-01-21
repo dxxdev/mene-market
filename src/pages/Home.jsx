@@ -157,7 +157,7 @@ const Home = () => {
       <div className="pt-16 pb-6">
         <h3 className="text-3xl font-bold">Yangi kelgan mahsulotlar</h3>
         <ul className="pt-6 pb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {products.slice(0, 8).map((product) => {
+          {products.map((product) => {
             return (
               <ProductCard
                 key={product.id}

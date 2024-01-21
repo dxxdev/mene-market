@@ -8,6 +8,10 @@ import {
   JBLsimsizQuloqchinAmetist,
   JBLsimsizQuloqchinOq,
   JBLsimsizQuloqchinQora,
+  aqlliRobotChangyutgich1,
+  aqlliRobotChangyutgich2,
+  aqlliRobotChangyutgich3,
+  aqlliRobotChangyutgich4,
   aqlliSoatSmartBandM7Kok,
   aqlliSoatSmartBandM7Qora,
   aqlliSoatSmartBandM7ToqKok,
@@ -20,11 +24,16 @@ import {
   liderningOltinKitobi1,
   liderningOltinKitobi2,
   liderningOltinKitobi3,
+  maishiyTexnika,
   medicine,
   millionDollarlikXatolar1,
   millionDollarlikXatolar2,
   millionDollarlikXatolar3,
   telephones,
+  termometrSoatKulrang1,
+  termometrSoatKulrang2,
+  termometrSoatOq1,
+  termometrSoatOq2,
   transformerCaseOq1,
   transformerCaseOq2,
   transformerCaseQora1,
@@ -477,6 +486,98 @@ export const products = [
     ],
     countProduct: 1,
     reservations: 100,
+    rating: 5,
+    saved: false,
+    isItNew: true,
+    top: true,
+  },
+  {
+    id: randomId(),
+    productName: "Harorat va namlikni o'lchaydigan soat",
+    description: [
+      "Elektron raqamli termometr-gigrometr, ob-havo stantsiyasi. Uy ob-havo stantsiyasi xona ichidagi havo harorati va namligini (HTC-1) va masofaviy sensor yordamida tashqi haroratni (HTC-2) o'lchaydi. Kadrning yuqori grafigi ikkala sensorning harorat ko'rsatkichlarini aks ettiradi, u tugma bilan almashtiriladi. Pastki grafikda soatlar, kalendar va namlik ko'rsatilgan. Namlik faqat ichki sensordan o'lchanadi. Qo'shimcha funktsiyalardan harorat va namlikning minimal va maksimal qiymatlarini eslab qolish, C va F da o'lchash. Qurilma har qanday tekis yuzaga joylashtirilishi yoki devorga osib qo'yilishi mumkin.",
+    ],
+    category: {
+      categoryName: "Maishiy texnika",
+      categoryImage: maishiyTexnika,
+      categoryColors: ["green-100", "green-300"],
+    },
+    price: 5, // dollars are determined
+    discount: 0.2,
+    discountPrice: function () {
+      return this.price - this.price * this.discount;
+    },
+    howMuchDiscount: function () {
+      return 100 * this.discount;
+    },
+    images: [
+      termometrSoatOq1,
+      termometrSoatOq2,
+      termometrSoatKulrang1,
+      termometrSoatKulrang2,
+    ],
+    colors: [
+      {
+        colorName: "Oq",
+        active: true,
+        image: 0,
+        theRest: 36,
+      },
+      {
+        colorName: "Kulrang",
+        active: true,
+        image: 2,
+        theRest: 36,
+      },
+    ],
+    countProduct: 1,
+    reservations: 700,
+    rating: 5,
+    saved: false,
+    isItNew: true,
+    top: true,
+  },
+  {
+    id: randomId(),
+    productName: "Aqilli robot changyutgich Xiaomi Robot Vacuum E12",
+    description: [
+      "Yangi Xiaomi Robot Vacuum E12 EU bilan ilg‘or texnologiyalar va bekami-ko‘st tozalik dunyosiga xush kelibsiz! Vaqt - eng qimmatli resurs bo‘lgan davrda, biz sizga innovatsion yechimni taqdim etamiz, u uyingizni yig‘ishtirish jarayonini ahamiyatli soddalashtiradi va yaxshilaydi. ",
+      "Xiaomi Robot Vacuum E12 EUdagi kuchli motor alohida e’tiborga sazovor. Uning yordamida ushbu aqlli robot-changyutgich tozalashning yuqori samaradorligi sharofati bilan bozorda ajralib turadi. ",
+      "4000 Pa so‘rish kuchiga ega bo‘lgan motor har qanday qoplamani samarali tozalanishini va eng murakkab iflosliklarni olib tashlanishini kafolatlaydi. Chang, sochlar, ushoqlar yoki mayda chiqindilar bo‘lsin, ushbu changyutgich mashaqqatsiz istalgan vazifaning uddasidan chiqadi. ",
+      "Yo‘nalishni zakovatli rejalashtirish va datchiklarni taraqqiy etgan tizimi Xiaomi Robot Vacuum E12 EU samaradorligi asosiy rolni o‘ynaydi, uni bozorda mukammal robot-changyutgichlar orasida birinchi qiladi. Aqlli robot-changyutgich uyingizni tahlil qilish va uning fazosini anglash uchun mashina o‘qitilishining murakkab algoritmlarini qo‘llaydi. Bu unga yig‘ishtirish yo‘llarini samarali maqbullashtirish imkonini beradi. ",
+      "Changyutgich uy muhitining har xil sharoitlariga, mebelni, har xil to‘siqlarni va xonalarning joylashishini hisobga olib, moslashishga qodir. U polning har bir maydonini qamrab olib, ancha sinchkov va tizimli yig‘ishtirilishini ta’minlab, zigzansimon yo‘l bo‘ylab o‘tib boradi. ",
+      "Xiaomi Robot Vacuum E12 EUda to‘siqlarni aniqlash datchigi robotga mebel, devorlar va zinapoyalar kabi to‘siqlarni aniqlash va ularni aylanib o‘tish imkonini beradi. Bu robotning o‘zini ham, atrofdagi obyektlarni ham shikastlanish xavfini istisno qilib, uy bo‘ylab xavfsiz va ravon harakatlanishni ta’minlaydi. Bunday zakovatli yondashuv yig‘ishtirishni ancha samarali va xavfsiz qiladi. ",
+      "Balandlik datchigi ayniqsa uylarning zinapoyalaridan tushib ketishlarni oldini olishda muhim rol o‘ynaydi. Ushbu datchik robot-changyutgichning zinapoyalardan yoki boshqa baland to‘siqlardan tushib ketishini oldini olib, balandlikni ishonchli aniqlanishini ta’minlaydi. ",
+    ],
+    category: {
+      categoryName: "Maishiy texnika",
+      categoryImage: maishiyTexnika,
+      categoryColors: ["green-100", "green-300"],
+    },
+    price: 300, // dollars are determined
+    discount: 0.2,
+    discountPrice: function () {
+      return this.price - this.price * this.discount;
+    },
+    howMuchDiscount: function () {
+      return 100 * this.discount;
+    },
+    images: [
+      aqlliRobotChangyutgich1,
+      aqlliRobotChangyutgich2,
+      aqlliRobotChangyutgich3,
+      aqlliRobotChangyutgich4,
+    ],
+    colors: [
+      {
+        colorName: "Oq",
+        active: true,
+        image: 0,
+        theRest: 36,
+      },
+    ],
+    countProduct: 1,
+    reservations: 40,
     rating: 5,
     saved: false,
     isItNew: true,
