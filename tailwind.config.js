@@ -13,6 +13,7 @@ module.exports = withMT({
       "deepsky-blue": "#08C8F9",
       "off-blue": "#EFF5FB",
       "soft-gray": "#EDEDED",
+      "off-gray": "#FAFAFA",
     },
   },
   plugins: [],

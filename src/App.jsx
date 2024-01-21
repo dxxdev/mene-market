@@ -11,6 +11,7 @@ import Detail from "./pages/Detail";
 import Products from "./pages/Products";
 import CategoryProducts from "./pages/CategoryProducts";
 import Policy from "./pages/Policy";
+import Contact from "./pages/Contact";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/policy" element={<Policy />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/products/:category" element={<CategoryProducts />} />
         <Route path="/products/:category/:productName" element={<Detail />} />
       </Route>
