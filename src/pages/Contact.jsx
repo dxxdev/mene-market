@@ -147,36 +147,47 @@ const Contact = () => {
             </div>
             <div className="flex flex-col gap-3">
               <label
-                htmlFor="clientName"
+                htmlFor="clientEmail"
                 className="text-[13px] text-dark-gray leading-[112%]"
               >
                 Email address
               </label>
               <input
                 type="text"
-                id="clientName"
+                id="clientEmail"
                 className="px-4 border-2 outline-none rounded-md py-2 text-jet-black placeholder:text-dark-gray border-dark-gray"
                 placeholder="Your Email"
               />
             </div>
             <div className="flex flex-col gap-3">
               <label
-                htmlFor="clientName"
+                htmlFor="message"
                 className="text-[13px] text-dark-gray leading-[112%]"
               >
                 Message
               </label>
               <textarea
                 type="text"
-                id="clientName"
+                id="message"
                 rows={6}
                 className="px-4 border-2 resize-none outline-none rounded-md py-2 text-jet-black placeholder:text-dark-gray border-dark-gray"
                 placeholder="Your Email"
               ></textarea>
             </div>
-            <button className="gradient-btn w-max text-white !rounded-lg">Send Message</button>
+            <button className="gradient-btn w-max text-white !rounded-lg">
+              Send Message
+            </button>
           </div>
-          <div className="w-full bg-black"></div>
+          <div className="w-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d472.4748307477069!2d71.9773501476555!3d40.876315555922446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bca14b5018fdcb%3A0xedfc2c995d1b9641!2sWebKing!5e1!3m2!1suz!2s!4v1705900602172!5m2!1suz!2s"
+              width="100%"
+              height="100%"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
