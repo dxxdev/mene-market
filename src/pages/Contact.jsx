@@ -1,5 +1,7 @@
 import React from "react";
 import { styles } from "../styles";
+import Service from "../components/Service";
+import { car, chat, payment } from "../assets/icons";
 
 const Contact = () => {
   return (
@@ -188,6 +190,31 @@ const Contact = () => {
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+        </div>
+        <div className="pt-16 pb-6">
+          <h3 className="text-3xl font-bold">Mene market qulayliklari</h3>
+          <ul className="pt-6 pb-6 flex flex-wrap items-stretch justify-center content-start gap-8">
+            <Service
+              icon={car}
+              title="Tezkor yetkazib berish xizmati"
+              description="Buyurtmangiz O'zbekistonning barcha viloyatlariga 3 kun ichida yetqazib beriladi."
+            />
+            <Service
+              icon={payment}
+              title="To'lovni istalgan usulda amalga oshirish"
+              description="Buyurtmani oldindan click, payme yoki buyurtmani qo'lingizga olganingizdan keyin amalga oshiring."
+            />
+            <Service
+              icon={chat}
+              title="Bepul qo'llab-quvvatlash markazi"
+              description="Dam olish kunlarisiz qo'llab quvvatlash bo'limi mavjud. +998 99 876 54 32"
+            />
+            <Service
+              icon={car}
+              title="Mijozlarni rag'batlantirish tizimi"
+              description="Doimiy mijozlarimiz uchun sovg'alar va bonuslar taqdim etib boramiz."
+            />
+          </ul>
         </div>
       </div>
     </div>
