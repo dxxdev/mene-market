@@ -129,6 +129,55 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        <div className="flex justify-between gap-12 items-stretch">
+          <div className="flex w-full flex-col gap-6">
+            <div className="flex flex-col gap-3">
+              <label
+                htmlFor="clientName"
+                className="text-[13px] text-dark-gray leading-[112%]"
+              >
+                Full name
+              </label>
+              <input
+                type="text"
+                id="clientName"
+                className="px-4 border-2 outline-none rounded-md py-2 text-jet-black placeholder:text-dark-gray border-dark-gray"
+                placeholder="Your Name"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <label
+                htmlFor="clientName"
+                className="text-[13px] text-dark-gray leading-[112%]"
+              >
+                Email address
+              </label>
+              <input
+                type="text"
+                id="clientName"
+                className="px-4 border-2 outline-none rounded-md py-2 text-jet-black placeholder:text-dark-gray border-dark-gray"
+                placeholder="Your Email"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <label
+                htmlFor="clientName"
+                className="text-[13px] text-dark-gray leading-[112%]"
+              >
+                Message
+              </label>
+              <textarea
+                type="text"
+                id="clientName"
+                rows={6}
+                className="px-4 border-2 resize-none outline-none rounded-md py-2 text-jet-black placeholder:text-dark-gray border-dark-gray"
+                placeholder="Your Email"
+              ></textarea>
+            </div>
+            <button className="gradient-btn w-max text-white !rounded-lg">Send Message</button>
+          </div>
+          <div className="w-full bg-black"></div>
+        </div>
       </div>
     </div>
   );
