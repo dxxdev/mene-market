@@ -47,9 +47,11 @@ import {
   zalmanCaseQora,
 } from "../assets/images";
 
+let firstId = 0;
+
 export const products = [
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "JBL simsiz quloqchin",
     description: [
       "JBL naushniklar musiqadan zavqlanish, ish, o'qish, o'yin-kulgi va sport uchun mos bo'lgan ko'p qirrali modeldir. O'lchamlar kattalar uchun ham, bolalar uchun ham mos keladi. Ular buklanadigan dizaynga ega, bu sizga ushbu aksessuarni saqlash uchun yanada ixcham va sumkangizda yoki xaltangizda olib yurish uchun qulay qilish imkonini beradi.",
@@ -132,7 +134,7 @@ export const products = [
     top: true,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "Aqlli soat Smart Band M7",
     description: [
       "Kerakli xarakteristikaning tugmachasini bosib, tegishli turdagi soatni tanlashingiz mumkin: Magnit yoki to'g'ridan-to'g'ri ulanuvchi",
@@ -209,7 +211,7 @@ export const products = [
     top: true,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "Bloody J90S o'yin sichqonchasi",
     description: [
       "A4Tech Bloody J90s simli sichqonchasi har bir o'yinchiga yoqadi. Uning og'ir optik sensori juda sezgir. Bu harakatning aniqligi va tezligini kafolatlaydi. Bunday aksessuar bilan o'yin maydoni yanada qulayroq bo'ladi. Tajribali o'yinchilar va yangi boshlanuvchilar har qanday to'siqlarni engib o'tishlari va turli janglarda doimo g'alaba qozonishlari mumkin. O'yinning qiyinligi va intensivligi darajasidan qat'i nazar, sichqoncha eng foydali bo'ladi. Bunday yordamchi bilan fitnada to'liq ishtirok etish kafolatlanadi.",
@@ -276,7 +278,7 @@ export const products = [
     top: true,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "iPhone 14 Pro",
     description: [
       "iPhone 14 Pro ni qo'lingizga olganda eng yaxshilarning orasidagi eng yaxshisini ushlab turganingizni tushunasiz. Apparat va dasturiy qismlar bir-biri bilan to'g'ri va uyg'un moslashgani benuqson foydalanish tuyg'usini beradi. Apple taklif etadigan yuqori darajadagi xavfsizlik va ishonchlilik sizdagi ishonchni orttiradi.",
@@ -350,7 +352,7 @@ export const products = [
     top: true,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "O'yin kompyuteri Transformers",
     description: [
       "RGB yoritgichli o'yin qutisi",
@@ -433,7 +435,7 @@ export const products = [
     top: true,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "O'yin kompyuteri Zalman",
     description: [
       "RGB yoritgichli o'yin qutisi",
@@ -517,7 +519,7 @@ export const products = [
     top: true,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "Million dollarlik xatolar",
     description: [
       "O'z tajribasini boshqalar bilan bo'lishish haqiqiy tadbirkorning eng muhim xususiyatlaridan biridir.",
@@ -583,7 +585,7 @@ export const products = [
     top: true,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "Liderning oltin kitobi",
     description: [
       "Bu moʻjaz to‘plam boshliqlarning hayoti va faoliyati davomida uchraydigan muammolar, shuningdek, ularning yechimlariga doir tajribali lider hisoblangan Jon Baldonining lo‘nda maslahatlarini o‘zida mujassam qilgan. Maslahatlarda amaliy va taktik jihatlar ko‘zda tutilgan.",
@@ -647,7 +649,7 @@ export const products = [
     top: false,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "Vitamin D3 10ml",
     description: [
       "D3 vitamini D vitaminining tabiiy shakli bo'lib, quyosh nuri ta'sirida inson terisida hosil bo'ladi. D3 vitaminining eng muhim vazifasi skeletning minerallashuvi va o'sishiga yordam beradigan kaltsiy va fosfat metabolizmini tartibga solishdir. Qonda kaltsiy ionlarining kontsentratsiyasi skelet mushaklarining mushak tonusini, miyokard funktsiyasini saqlashni belgilaydi, asab qo'zg'alishning o'tkazilishiga yordam beradi va qon ivish jarayonini tartibga soladi.",
@@ -708,7 +710,7 @@ export const products = [
     top: false,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "Harorat va namlikni o'lchaydigan soat",
     description: [
       "Elektron raqamli termometr-gigrometr, ob-havo stantsiyasi. Uy ob-havo stantsiyasi xona ichidagi havo harorati va namligini (HTC-1) va masofaviy sensor yordamida tashqi haroratni (HTC-2) o'lchaydi. Kadrning yuqori grafigi ikkala sensorning harorat ko'rsatkichlarini aks ettiradi, u tugma bilan almashtiriladi. Pastki grafikda soatlar, kalendar va namlik ko'rsatilgan. Namlik faqat ichki sensordan o'lchanadi. Qo'shimcha funktsiyalardan harorat va namlikning minimal va maksimal qiymatlarini eslab qolish, C va F da o'lchash. Qurilma har qanday tekis yuzaga joylashtirilishi yoki devorga osib qo'yilishi mumkin.",
@@ -778,7 +780,7 @@ export const products = [
     top: true,
   },
   {
-    id: randomId(),
+    id: (firstId += 1),
     productName: "Aqilli robot changyutgich Xiaomi Robot Vacuum E12",
     description: [
       "Yangi Xiaomi Robot Vacuum E12 EU bilan ilg‘or texnologiyalar va bekami-ko‘st tozalik dunyosiga xush kelibsiz! Vaqt - eng qimmatli resurs bo‘lgan davrda, biz sizga innovatsion yechimni taqdim etamiz, u uyingizni yig‘ishtirish jarayonini ahamiyatli soddalashtiradi va yaxshilaydi. ",
@@ -871,7 +873,6 @@ export const categoryProduct = category.map((item) => {
     image: productIndex.category.categoryImage,
     color: productIndex.category.categoryColors,
   };
-  console.log(productIndex);
   return product;
 });
 
