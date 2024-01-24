@@ -12,6 +12,7 @@ import Products from "./pages/Products";
 import CategoryProducts from "./pages/CategoryProducts";
 import Policy from "./pages/Policy";
 import Contact from "./pages/Contact";
+import Saved from "./pages/Saved";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/products/:category" element={<CategoryProducts />} />
         <Route path="/products/:category/:id" element={<Detail />} />
+        <Route path="/saved" element={<Saved />} />
       </Route>
     )
   );

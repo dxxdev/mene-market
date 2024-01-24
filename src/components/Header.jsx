@@ -1,8 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { styles } from "../styles";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logoHeader } from "../assets/images";
 import {
+  Badge,
+  IconButton,
   Menu,
   MenuHandler,
   MenuItem,
@@ -18,10 +20,24 @@ import {
   search,
   uzbekistanFlag,
 } from "../assets/icons";
-import { siteLanguage } from "../data/data";
+import { products, siteLanguage } from "../data/data";
 
 const Header = () => {
+  const navigate = useNavigate();
   const searchInput = useRef(null);
+  const [render, setRender] = useState(true);
+  const [howSaved, setHowSaved] = useState(0);
+  const filteredProductOnCart = (arr) => {
+    const filteredProductOnSaved = arr.filter((product) => {
+      return product.saved;
+    });
+    setHowSaved(filteredProductOnSaved.length);
+  };
+  useEffect(() => {
+    // setRender((prev) => !prev);
+    filteredProductOnCart(products);
+    console.log(howSaved);
+  }, [products.map((product) => product.saved)]);
   const [selectedLanguage, setSelectedLanguage] = useState(siteLanguage);
   return (
     <header className="backdrop-blur-sm bg-white/90 sticky top-0 w-full z-[999]">
@@ -130,6 +146,33 @@ const Header = () => {
                   </span>
                   <span className="hidden sm:block">Kirish</span>
                 </NavLink>
+              </li>
+              <li>
+                <Badge content={howSaved}>
+                  <IconButton
+                    onClick={() => navigate("/saved")}
+                    size="sm"
+                    variant="text"
+                    className="text-lg text-jet-black font-medium flex items-center gap-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="21"
+                      viewBox="0 0 22 21"
+                      fill="none"
+                      className="transition-all duration-750 active:scale-75"
+                    >
+                      <path
+                        d="M11.62 19.2998C11.28 19.4198 10.72 19.4198 10.38 19.2998C7.48 18.3098 1 14.1798 1 7.17984C1 4.08984 3.49 1.58984 6.56 1.58984C8.38 1.58984 9.99 2.46984 11 3.82984C12.01 2.46984 13.63 1.58984 15.44 1.58984C18.51 1.58984 21 4.08984 21 7.17984C21 14.1798 14.52 18.3098 11.62 19.2998Z"
+                        stroke="#13181f"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </IconButton>
+                </Badge>
               </li>
             </ul>
           </nav>
