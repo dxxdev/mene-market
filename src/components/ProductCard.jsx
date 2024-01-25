@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
-import { products, savedProduct } from "../data/data";
+import { headerRender, products, savedProduct } from "../data/data";
 import RatingBar from "./RatingBar";
 import { shoppingCart } from "../assets/icons";
 
@@ -86,6 +86,7 @@ const ProductCard = ({ product, rendered }) => {
               aria-label="liked button"
               onClick={() => {
                 savedProduct(product);
+                console.log(headerRender);
                 rendered((prev) => !prev);
               }}
             >

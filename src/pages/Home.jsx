@@ -16,7 +16,7 @@ import ProductCard from "../components/ProductCard";
 import { arrowRight, car, chat, payment } from "../assets/icons";
 import Service from "../components/Service";
 
-const Home = () => {
+const Home = ({ rendered }) => {
   const navigate = useNavigate();
   const [render, setRender] = useState(false);
   useEffect(() => {
@@ -165,7 +165,7 @@ const Home = () => {
               return (
                 <ProductCard
                   key={product.id}
-                  rendered={setRender}
+                  rendered={rendered}
                   product={product}
                 />
               );

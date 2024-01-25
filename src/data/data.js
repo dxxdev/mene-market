@@ -861,15 +861,15 @@ function setCategoryToArray(arr) {
   return categoryArr;
 }
 
-export const commentRatingToArr = (arr)=>{
+export const commentRatingToArr = (arr) => {
   let ratings = new Set();
-  arr.forEach(item=>{
+  arr.forEach((item) => {
     let ratingValue = item.rating;
     ratings.add(ratingValue);
   });
   let ratingsArr = Array.from(ratings);
   return ratingsArr;
-}
+};
 
 export const category = setCategoryToArray(products);
 
@@ -886,8 +886,15 @@ export const categoryProduct = category.map((item) => {
   return product;
 });
 
+export let headerRender = true;
+
 export const savedProduct = (product) => {
   product.saved = !product.saved;
+  if (headerRender) {
+    headerRender = false;
+  } else {
+    headerRender = true;
+  }
 };
 
 export let siteLanguage = "UZB";

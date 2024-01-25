@@ -20,24 +20,17 @@ import {
   search,
   uzbekistanFlag,
 } from "../assets/icons";
-import { products, siteLanguage } from "../data/data";
+import { headerRender, products, siteLanguage } from "../data/data";
 
-const Header = () => {
+const Header = ({ rendered }) => {
   const navigate = useNavigate();
   const searchInput = useRef(null);
-  const [render, setRender] = useState(true);
   const [howSaved, setHowSaved] = useState(0);
-  const filteredProductOnCart = (arr) => {
-    const filteredProductOnSaved = arr.filter((product) => {
-      return product.saved;
-    });
-    setHowSaved(filteredProductOnSaved.length);
-  };
+
   useEffect(() => {
-    // setRender((prev) => !prev);
-    filteredProductOnCart(products);
-    console.log(howSaved);
-  }, [products.map((product) => product.saved)]);
+    setHowSaved(products.filter((product) => product.saved).length);
+  }, [headerRender, products, rendered]);
+
   const [selectedLanguage, setSelectedLanguage] = useState(siteLanguage);
   return (
     <header className="backdrop-blur-sm bg-white/90 sticky top-0 w-full z-[999]">
@@ -148,7 +141,13 @@ const Header = () => {
                 </NavLink>
               </li>
               <li>
-                <Badge content={howSaved}>
+                <Badge
+                  content={howSaved}
+                  color="blue"
+                  invisible={howSaved > 0 ? false : true}
+                  className="flex cursor-pointer !top-[10%] !right-[10%] min-w-[20px] min-h-[20px] justify-center items-center"
+                  onClick={() => navigate("/saved")}
+                >
                   <IconButton
                     onClick={() => navigate("/saved")}
                     size="sm"
