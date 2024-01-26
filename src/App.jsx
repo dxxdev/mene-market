@@ -31,7 +31,7 @@ const App = () => {
           path="/products/:category/:id"
           element={<Detail setRender={setRender} />}
         />
-        <Route path="/saved" element={<Saved setRender={setRender} />} />
+        <Route path="/saved" element={<Saved render={render} setRender={setRender} />} />
       </Route>
     )
   );

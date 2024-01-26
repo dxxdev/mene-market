@@ -13,7 +13,7 @@ import CommentModal from "./CommentModal";
 const Commentaries = ({ activeTab, setActiveTab, info }) => {
   const [ratingArr, setRatingArr] = useState([]);
   const [commentFilterValue, setCommentFilterValue] = useState("all");
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   useEffect(() => {
     setRatingArr(commentRatingToArr(info.commentaries));
   }, []);

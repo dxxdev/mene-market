@@ -214,7 +214,7 @@ const Home = ({ rendered }) => {
               return (
                 <ProductCard
                   key={product.id}
-                  rendered={setRender}
+                  rendered={rendered}
                   product={product}
                 />
               );
